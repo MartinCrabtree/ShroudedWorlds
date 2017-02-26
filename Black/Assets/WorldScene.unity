@@ -33390,7 +33390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &843094582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36099,6 +36099,22 @@ Transform:
   m_Father: {fileID: 1066095913}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &927557029 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 5e520ff55424fbd49a84d487ba8bace6, type: 2}
+  m_PrefabInternal: {fileID: 2059050796}
+--- !u!114 &927557033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 927557029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c24be3922aac094e9a6894543a5f4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePerSecond: 2.5
 --- !u!1001 &928719689
 Prefab:
   m_ObjectHideFlags: 0
