@@ -21,7 +21,7 @@ public class Lore : MonoBehaviour {
 	void Awake(){
 		//FREDRIK Create
 		Save.lore.Add(new LoreItem("this is a test for 1", "stock1", "testLoreObject"));
-		Save.lore.Add(new LoreItem("this is a test for 2", "stock2", "fakename2"));
+		Save.lore.Add(new LoreItem("the bed is magical", "lorebed", "bed"));
 		Save.lore.Add(new LoreItem("this is a test for 3", "stock3", "fakename3"));
 		Save.lore.Add(new LoreItem("this is a test for 4", "stock4", "fakename4"));
 		Save.lore.Add(new LoreItem("this is a test for 5", "stock1", "fakename5"));

@@ -99,5 +99,7 @@ public class Journal : MonoBehaviour {
 	public void openJournal(){
 		panelLock.gameObject.SetActive (true);
 		pageProcessing (0, 1);
+//		rightImage.sprite = Resources.Load<Sprite> (Save.lore [0].lorePicture);
+//		Debug.Log (Save.lore[1].lorePicture);
 	}
 }
