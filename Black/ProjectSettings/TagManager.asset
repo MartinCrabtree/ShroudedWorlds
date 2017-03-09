@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Items
+  - Inventory
   layers:
   - Default
   - TransparentFX
