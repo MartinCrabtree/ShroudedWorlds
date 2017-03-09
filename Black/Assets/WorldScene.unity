@@ -1745,7 +1745,7 @@ GameObject:
   - component: {fileID: 62423241}
   - component: {fileID: 62423243}
   - component: {fileID: 62423242}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7256,7 +7256,7 @@ GameObject:
   - component: {fileID: 207406711}
   - component: {fileID: 207406713}
   - component: {fileID: 207406712}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8334,7 +8334,7 @@ GameObject:
   - component: {fileID: 222300889}
   - component: {fileID: 222300891}
   - component: {fileID: 222300890}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rightimage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8449,7 +8449,7 @@ GameObject:
   - component: {fileID: 230195829}
   - component: {fileID: 230195831}
   - component: {fileID: 230195830}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8697,6 +8697,14 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913568433812736, guid: 5ee4a96fd08ba00428e55e6ec9fd55bd, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021542439696886, guid: 5ee4a96fd08ba00428e55e6ec9fd55bd, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ee4a96fd08ba00428e55e6ec9fd55bd, type: 2}
@@ -13495,7 +13503,7 @@ GameObject:
   - component: {fileID: 352958958}
   - component: {fileID: 352958957}
   - component: {fileID: 352958956}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: closebutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20648,7 +20656,7 @@ GameObject:
   - component: {fileID: 503399878}
   - component: {fileID: 503399877}
   - component: {fileID: 503399879}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: InventoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22636,13 +22644,13 @@ GameObject:
   - component: {fileID: 547077481}
   - component: {fileID: 547077483}
   - component: {fileID: 547077482}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Craftstation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &547077481
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24928,7 +24936,7 @@ GameObject:
   - component: {fileID: 598075716}
   - component: {fileID: 598075718}
   - component: {fileID: 598075717}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rightpage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27938,7 +27946,7 @@ GameObject:
   - component: {fileID: 664179483}
   - component: {fileID: 664179485}
   - component: {fileID: 664179484}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: leftimage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30537,7 +30545,7 @@ GameObject:
   - component: {fileID: 737511771}
   - component: {fileID: 737511773}
   - component: {fileID: 737511772}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: textleftpage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31507,7 +31515,7 @@ GameObject:
   - component: {fileID: 763182248}
   - component: {fileID: 763182247}
   - component: {fileID: 763182249}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: arrowright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34032,7 +34040,7 @@ GameObject:
   - component: {fileID: 825741197}
   - component: {fileID: 825741196}
   - component: {fileID: 825741195}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Tempbutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34770,7 +34778,7 @@ GameObject:
   - component: {fileID: 843094582}
   - component: {fileID: 843094584}
   - component: {fileID: 843094583}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: UILockPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48996,7 +49004,7 @@ GameObject:
   - component: {fileID: 1183126011}
   - component: {fileID: 1183126013}
   - component: {fileID: 1183126012}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49325,7 +49333,7 @@ GameObject:
   - component: {fileID: 1191233350}
   - component: {fileID: 1191233349}
   - component: {fileID: 1191233348}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52576,7 +52584,7 @@ GameObject:
   - component: {fileID: 1243528492}
   - component: {fileID: 1243528494}
   - component: {fileID: 1243528493}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Mixer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53649,7 +53657,7 @@ GameObject:
   - component: {fileID: 1269152246}
   - component: {fileID: 1269152248}
   - component: {fileID: 1269152247}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55587,7 +55595,7 @@ GameObject:
   - component: {fileID: 1301372545}
   - component: {fileID: 1301372547}
   - component: {fileID: 1301372546}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rightlockedpanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69332,7 +69340,7 @@ GameObject:
   - component: {fileID: 1607258695}
   - component: {fileID: 1607258694}
   - component: {fileID: 1607258693}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: combine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72757,7 +72765,7 @@ GameObject:
   - component: {fileID: 1686619882}
   - component: {fileID: 1686619884}
   - component: {fileID: 1686619883}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75318,7 +75326,7 @@ GameObject:
   - component: {fileID: 1771832940}
   - component: {fileID: 1771832942}
   - component: {fileID: 1771832941}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: leftlockedpanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78996,7 +79004,7 @@ GameObject:
   - component: {fileID: 1864645647}
   - component: {fileID: 1864645649}
   - component: {fileID: 1864645648}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: textrightpage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80592,7 +80600,7 @@ GameObject:
   - component: {fileID: 1906287172}
   - component: {fileID: 1906287174}
   - component: {fileID: 1906287173}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: leftpage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81416,7 +81424,7 @@ GameObject:
   - component: {fileID: 1916937225}
   - component: {fileID: 1916937227}
   - component: {fileID: 1916937226}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86272,7 +86280,7 @@ GameObject:
   - component: {fileID: 2013011158}
   - component: {fileID: 2013011157}
   - component: {fileID: 2013011159}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: arrowleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87229,7 +87237,7 @@ GameObject:
   - component: {fileID: 2039153186}
   - component: {fileID: 2039153188}
   - component: {fileID: 2039153187}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Journal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89684,7 +89692,7 @@ GameObject:
   - component: {fileID: 2105058185}
   - component: {fileID: 2105058187}
   - component: {fileID: 2105058186}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92233,7 +92241,7 @@ GameObject:
   - component: {fileID: 2146529751}
   - component: {fileID: 2146529750}
   - component: {fileID: 2146529752}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: closebutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
