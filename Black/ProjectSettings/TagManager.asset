@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Items
   - Inventory
+  - ItemDatabase
   layers:
   - Default
   - TransparentFX

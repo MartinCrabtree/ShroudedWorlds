@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.Collections.Generic; // needed for lists
 using UnityEngine;
 
 public class itemDatabase : MonoBehaviour {

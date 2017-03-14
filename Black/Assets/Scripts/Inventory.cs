@@ -15,23 +15,28 @@ public class Inventory : MonoBehaviour {
 
     void Start()
     {
-        database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<itemDatabase>();
+        int slotAmount = 0;
 
+        database = GameObject.FindGameObjectWithTag("itemDatabase").GetComponent<itemDatabase>();
+               
 
         for (int i = 1; i < 13; i++)
         {
             GameObject slot = (GameObject)Instantiate(slots);
+            slot.GetComponent<ItemSlotBehavior>().slotNumber = slotAmount;
             Slots.Add(slot);
             Items.Add(new Item());
+            slot.GetComponent<RectTransform>().localPosition = new Vector3(x, y, 0);
             slot.transform.parent = this.gameObject.transform;
 
             slot.name = "Slot" + i;
-            slot.GetComponent<RectTransform>().localPosition = new Vector3(x, y, 0);
-            x = x + 60;
+           
+            x = x + 60; // move new slot to the right 60px
+            slotAmount++;
         }
 
-        addItem(0);
-        addItem(1);
+       // addItem(0);
+       //  addItem(1);
 
     }
 
