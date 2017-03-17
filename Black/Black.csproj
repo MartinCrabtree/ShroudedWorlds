@@ -111,15 +111,19 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scripts\ConsumableD2.cs" />
     <Compile Include="Assets\Scripts\FadeAlpha.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\InventoryD2.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\ItemD2.cs" />
     <Compile Include="Assets\Scripts\ItemSlotBehavior.cs" />
     <Compile Include="Assets\Scripts\Journal.cs" />
     <Compile Include="Assets\Scripts\Lore Objects\bed.cs" />
     <Compile Include="Assets\Scripts\Lore Objects\testLoreObject.cs" />
     <Compile Include="Assets\Scripts\Lore.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
+    <Compile Include="Assets\Scripts\SlotD2.cs" />
     <Compile Include="Assets\Scripts\itemDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
