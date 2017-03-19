@@ -12,11 +12,7 @@ public abstract class ItemD2 : MonoBehaviour {
     public int width;
     public int height;
 
-    public abstract void performAction()
-    {
-        // events
+    public abstract void performAction(); // will be extended elsewhere
 
-
-    }
 
 }

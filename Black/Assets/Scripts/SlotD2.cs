@@ -4,24 +4,28 @@ using UnityEngine;
 
 [System.Serializable]
 
-public class SlotD2 {
+public class SlotD2{
 
     public ItemD2 item;
     public bool isOccupied;
     public Rect position;
 
-    public Texture2D test;
+    
 
 
-    void Slot()
+    public SlotD2(Rect position)
     {
-
+        this.position = position;
     }
 
 
 
-    void draw()
+    public void draw(float frameX, float frameY)
     {
-        GUI.DrawTexture(position, item.image);
+        if (item != null)
+        {
+            GUI.DrawTexture(new Rect(frameX + position.x, frameY + position.y, position.width, position.height), item.image);
+        }
+        
     }
 }
