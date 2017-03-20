@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable] // tell unity it is not modal !!!!! cannot instantiate !!!!!
-public abstract class ItemD2 : MonoBehaviour {
+public abstract class ItemD2 {
 
     public Texture2D image;
-    // slot dimentions that it takes up
+    // x/y for which slot the item takes up
     public int x;
     public int y;
+
+
     public int width;
     public int height;
 

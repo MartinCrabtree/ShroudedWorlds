@@ -72866,8 +72866,8 @@ MonoBehaviour:
     width: 400
     height: 500
   items: []
-  slotx: 0
-  sloty: 0
+  slotx: 17
+  sloty: 255
   width: 38
   height: 38
 --- !u!114 &1696064135
@@ -72882,7 +72882,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   consumablesInspector:
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!1001 &1698894834
 Prefab:

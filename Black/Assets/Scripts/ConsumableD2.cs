@@ -5,10 +5,18 @@ using UnityEngine;
 
 [System.Serializable]
 
-public class ConsumableD2 : ItemD2 {
+public class ConsumableD2: ItemD2 {
+
+    // look to predefine?
+    // test consumable goes here?
+
+
+
+    
 
     public override void performAction()
     {
-        throw new NotImplementedException();
+        
+        // throw new NotImplementedException();
     }
 }

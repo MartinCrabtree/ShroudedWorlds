@@ -8,9 +8,11 @@ public class InventoryD2 : MonoBehaviour
     // for D2 inventory background 321x434
     public Texture2D image;
     public Rect position;
-    float x;
-    float y;
+    // float x;
+    // float y;
 
+
+    // dimenstions of the item array
     int slotWidth = 10;
     int slotHeight = 4;
 
@@ -23,23 +25,34 @@ public class InventoryD2 : MonoBehaviour
     public float width = 32;
     public float height = 32;
 
-    // for testing purposes
-    // public Texture2D test;
-
-
+    private bool testForItem;
+    
 
     // Use this for initialization
     void Start()
     {
         setSlots();
-        // addItem(0,0,items.item[0]);   ***** WTF NEED TO FIX ************************************
+        testForItem = false;
+        
 
+        // how to add items and pre define. 
+
+    }
+
+    void itemsActive()
+    {
+        // seed items so they are active because of order which scripts are called
+        addItem(0, 0, ItemDatabaseD2.getConsumable(0));
+        testForItem = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (!testForItem)
+        {
+            itemsActive();
+        }
     }
 
 
@@ -66,6 +79,7 @@ public class InventoryD2 : MonoBehaviour
     {
         drawInventory();
         drawSlots();
+        drawItems();
         
     }
 
@@ -91,6 +105,16 @@ public class InventoryD2 : MonoBehaviour
         GUI.DrawTexture(position, image);
     }
 
+    void drawItems()
+    {
+        // draw the item array list
+        for (int counter = 0; counter < items.Count; counter++)
+        {
+            GUI.DrawTexture(new Rect(slotx + position.x * items[counter].x * width, sloty + position.y * items[counter].y * height, items[counter].width * width, items[counter].height * height), items[counter].image);
+        }
+    }
+
+
     public void addItem(int x, int y, ItemD2 item)
     {
         // x/y number of slots the item takes up
@@ -106,15 +130,27 @@ public class InventoryD2 : MonoBehaviour
                 }
             }
         }
-        // adds item
+
+        // make sure the item isn't being placed out of bounds
+        if(x + item.width > slotWidth || y + item.height > slotHeight)
+        {
+            Debug.Log("Item placed out of bounds");
+            return;
+        }
+
+        
+
+        // adds item to the list with x/y coordinates
+        item.x = x;
+        item.y = y;
         items.Add(item);
         
         
         // set occupied slots based on item size
         
-        for(int xInventory = 0; xInventory < item.width + x;)
+        for(int xInventory = x; xInventory < item.width + x; xInventory++)
         {
-            for(int yInventory = 0; yInventory < item.height + y; yInventory++)
+            for(int yInventory = y; yInventory < item.height + y; yInventory++)
             {
                 slots[xInventory, yInventory].isOccupied = true;
             }

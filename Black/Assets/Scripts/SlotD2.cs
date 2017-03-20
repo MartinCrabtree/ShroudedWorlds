@@ -10,7 +10,7 @@ public class SlotD2{
     public bool isOccupied;
     public Rect position;
 
-    
+    // public static Texture2D test;
 
 
     public SlotD2(Rect position)
@@ -24,7 +24,7 @@ public class SlotD2{
     {
         if (item != null)
         {
-            GUI.DrawTexture(new Rect(frameX + position.x, frameY + position.y, position.width, position.height), item.image);
+            GUI.DrawTexture(new Rect(frameX + position.x, frameY + position.y, position.width, position.height), item.image);  
         }
         
     }
