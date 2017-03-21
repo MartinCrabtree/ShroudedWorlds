@@ -51,17 +51,18 @@ public class InventoryD2 : MonoBehaviour
         
 		//SEARCH FOR ITEM BY NAME
 		addItem(0, 0, itemDB.getConsumable("healingpot"));
+        addItem(1, 1, itemDB.getConsumable("healingpot")); ///// DOES NOT WORK
 
 
-/*  MARTIN - THIS WORKS, SO THE CORRECT ITEM IS BEING RETURNED FROM GETCONSUMABLE FUNCTION. THERE WERE ERRORS WHEN EVALUATING
-    IN THE ADDITEM FUNCTION, RETURNING AN ITEM PLACED OUT OF BOUNDS ERROR, BUT THAT WAS FIXED, AND NOW IF YOU PLAY YOU WILL SEE
-    THE ARMOR PIC , AND THERE ARE ISSUES WITH SLOT HEIGHT WIDTH PICTURE WIDTH HEIGHT ETC. SO USE AN IMAGE THAT WORKS FOR THE TUTORIAL
-    AND CHANGE UP THE SCRIPTS WHERE THE IMAGE NAME IS SET (right now it's set to some armor pic the first one on the resources folder).
-    SO good thing is its drawing, but bad news is due to size issues etc. and width, height, slotheight, slotwidth incompatibility it is
-    not drawing in the right place. Anyway leaving that part up to you - : ) MATHS!!! YAY. I only wrote some useful test debug stuff below
-    this current function, but other than that did not modify rest of this page. I did not touch SlotD2 script, but modified all others.
-*/
-		Debug.Log (items[0].name);
+        /*  MARTIN - THIS WORKS, SO THE CORRECT ITEM IS BEING RETURNED FROM GETCONSUMABLE FUNCTION. THERE WERE ERRORS WHEN EVALUATING
+            IN THE ADDITEM FUNCTION, RETURNING AN ITEM PLACED OUT OF BOUNDS ERROR, BUT THAT WAS FIXED, AND NOW IF YOU PLAY YOU WILL SEE
+            THE ARMOR PIC , AND THERE ARE ISSUES WITH SLOT HEIGHT WIDTH PICTURE WIDTH HEIGHT ETC. SO USE AN IMAGE THAT WORKS FOR THE TUTORIAL
+            AND CHANGE UP THE SCRIPTS WHERE THE IMAGE NAME IS SET (right now it's set to some armor pic the first one on the resources folder).
+            SO good thing is its drawing, but bad news is due to size issues etc. and width, height, slotheight, slotwidth incompatibility it is
+            not drawing in the right place. Anyway leaving that part up to you - : ) MATHS!!! YAY. I only wrote some useful test debug stuff below
+            this current function, but other than that did not modify rest of this page. I did not touch SlotD2 script, but modified all others.
+        */
+        Debug.Log (items[0].name);
 		Debug.Log (items[0].count);
 		Debug.Log (items[0].image);
 		Debug.Log (items[0].width);
@@ -92,8 +93,9 @@ public class InventoryD2 : MonoBehaviour
         {
             for (int y = 0; y < slotHeight; y++)
             {
-                slots[x, y] = new SlotD2(new Rect(slotx + width*x, sloty + height*y, height, width));
+                slots[x, y] = new SlotD2(new Rect(slotx + width * x, sloty + height * y, height, width));
                 
+
                 // Debug.Log("test");
             }
         }
@@ -105,7 +107,9 @@ public class InventoryD2 : MonoBehaviour
         drawInventory();
         drawSlots();
         drawItems();
+
         
+
     }
 
     void drawSlots()
@@ -132,10 +136,18 @@ public class InventoryD2 : MonoBehaviour
 
     void drawItems()
     {
+        
+        // !!!!!!!!!!!!!! NEEED TO FIX SO IT DRAWS FROM AN ITEM LIST
+        
+        
         // draw the item array list
+
         for (int counter = 0; counter < items.Count; counter++)
         {
-            GUI.DrawTexture(new Rect(slotx + position.x * items[counter].x * width, sloty + position.y * items[counter].y * height, items[counter].width * width, items[counter].height * height), items[counter].image);
+            GUI.DrawTexture(new Rect(slotx + position.x + 2, sloty + position.y + height + 2 , width, height), items[counter].image);
+
+
+            //GUI.DrawTexture(new Rect(slotx + position.x * items[counter].x * width, sloty + position.y * items[counter].y * height, items[counter].width * width, items[counter].height * height), items[counter].image);
         }
     }
 

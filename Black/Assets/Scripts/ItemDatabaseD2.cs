@@ -17,8 +17,9 @@ public class ItemDatabaseD2 : MonoBehaviour {
     {
         consumables = consumablesInspector;
 
-		//CREATE ALL ITEMS HERE
-		consumable = new ConsumableD2(1,"healingpot","A_Armor04", 10, 4);
+        //CREATE ALL ITEMS HERE
+        // consumable = new ConsumableD2(1,"healingpot","A_Armor04", 10, 4);
+        consumable = new ConsumableD2(1, "healingpot", "A_Armor04", 10, 4);
     }
 		
     // create a new instance of consumable when a new item is added
@@ -32,9 +33,9 @@ public class ItemDatabaseD2 : MonoBehaviour {
 			if (item.name == itemName) {
 				Debug.Log (item.name + " is found");
 				consumablePlaceholder.image = item.image;
-				consumablePlaceholder.width = item.width;
-				consumablePlaceholder.height = item.height;
-				consumablePlaceholder.name = item.name;
+                consumablePlaceholder.width = item.width;
+                consumablePlaceholder.height = item.height;
+                consumablePlaceholder.name = item.name;
 				consumablePlaceholder.count = item.count;
 			} else {
 				Debug.Log (item.name + " is not found");
