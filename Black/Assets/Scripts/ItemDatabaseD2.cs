@@ -20,6 +20,7 @@ public class ItemDatabaseD2 : MonoBehaviour {
         //CREATE ALL ITEMS HERE
         // consumable = new ConsumableD2(1,"healingpot","A_Armor04", 10, 4);
         consumable = new ConsumableD2(1, "healingpot", "A_Armor04", 10, 4);
+        consumable = new ConsumableD2(2, "unlit torch", "I_Torch01", 10, 4);
     }
 		
     // create a new instance of consumable when a new item is added
