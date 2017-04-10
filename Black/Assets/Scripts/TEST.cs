@@ -63,6 +63,7 @@ public class TEST : MonoBehaviour {
 	public void poisonstart1(){
 		Debug.Log ("pressed button");
 		Save.poisonInitiate = true;
+		Debug.Log ("Poisoning Player");
 	}
 	public void poisonimmune1(){
 		Debug.Log ("pressed button");
@@ -82,7 +83,8 @@ public class TEST : MonoBehaviour {
 	}
 	public void rempoisonimmune1(){
 		Debug.Log ("pressed button");
-		Save.poisonImmune = false;
+		Debug.Log ("starting ice effects");
+		Save.icetesting = true;
 	}
 	public void hallwayB1(){
 		Debug.Log ("pressed button");
@@ -98,7 +100,7 @@ public class TEST : MonoBehaviour {
 	}
 	public void study1(){
 		Debug.Log ("pressed button");
-		LightingScript.lightRoom ("studyDoor");
+		DoorScript.unlockDoor ("studyDoor");
 	}
 	public void lightHallwayA1(){
 		Debug.Log ("pressed button");

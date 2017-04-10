@@ -44,37 +44,43 @@ public class DoorScript : MonoBehaviour {
 	}
 	public static void openDoor(string doorName){
 		if (doorName == "diningRoomDoor"){
+			Debug.Log ("opening dining room door");
 			diningRoomDoorLocked.gameObject.SetActive (false);
 			diningRoomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "kitchenDoor"){
+			Debug.Log ("opening kitchen door");
 			kitchenDoorLocked.gameObject.SetActive (false);
 			kitchenDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "hallwayBDoor"){
+			Debug.Log ("opening hallway B door");
 			hallwayBDoorLocked.gameObject.SetActive (false);
 			hallwayBDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "guestBedroomDoor"){
+			Debug.Log ("opening guest bedroom door");
 			guestBedroomDoorLocked.gameObject.SetActive (false);
 			guestBedroomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "masterBedroomDoor"){
+			Debug.Log ("opening master bedroom door");
 			masterBedroomDoorLocked.gameObject.SetActive (false);
 			masterBedroomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "studyDoor"){
+			Debug.Log ("opening study door");
 			studyDoorLocked.gameObject.SetActive (false);
 			studyDoorOpened.gameObject.SetActive (true);
 		}
 	}
 	public static void unlockDoor(string doorName){
-		if (doorName == "diningRoomDoor" && Save.diningRoomDoorOpen == true){
+		if (doorName == "diningRoomDoor" && Save.diningRoomDoorOpen == false){
 			openDoor ("diningRoomDoor");
-		}else if (doorName == "kitchenDoor" && Save.kitchenDoorOpen == true){
+		}else if (doorName == "kitchenDoor" && Save.kitchenDoorOpen == false){
 			openDoor ("kitchenDoor");
-		}else if (doorName == "hallwayBDoor" && Save.hallwayBDoorOpen == true){
+		}else if (doorName == "hallwayBDoor" && Save.hallwayBDoorOpen == false){
 			openDoor ("hallwayBDoor");
-		}else if (doorName == "guestBedroomDoor" && Save.guestBedroomDoorOpen == true){
+		}else if (doorName == "guestBedroomDoor" && Save.guestBedroomDoorOpen == false){
 			openDoor ("guestBedroomDoor");
-		}else if (doorName == "masterBedroomDoor" && Save.masterBedroomDoorOpen == true){
+		}else if (doorName == "masterBedroomDoor" && Save.masterBedroomDoorOpen == false){
 			openDoor ("masterBedroomDoor");
-		}else if (doorName == "studyDoor" && Save.studyDoorOpen == true){
+		}else if (doorName == "studyDoor" && Save.studyDoorOpen == false){
 			openDoor ("studyDoor");
 		}
 	}
