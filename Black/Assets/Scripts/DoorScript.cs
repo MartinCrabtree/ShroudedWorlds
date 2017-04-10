@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour {
 
-	public GameObject diningRoomDoorOpened;
-	public GameObject kitchenDoorOpened;
-	public GameObject hallwayBDoorOpened;
-	public GameObject guestBedroomDoorOpened;
-	public GameObject masterBedroomDoorOpened;
-	public GameObject studyDoorOpened;
+	public static GameObject diningRoomDoorOpened;
+	public static GameObject kitchenDoorOpened;
+	public static GameObject hallwayBDoorOpened;
+	public static GameObject guestBedroomDoorOpened;
+	public static GameObject masterBedroomDoorOpened;
+	public static GameObject studyDoorOpened;
 
-	public GameObject diningRoomDoorLocked;
-	public GameObject kitchenDoorLocked;
-	public GameObject hallwayBDoorLocked;
-	public GameObject guestBedroomDoorLocked;
-	public GameObject masterBedroomDoorLocked;
-	public GameObject studyDoorLocked;
+	public static GameObject diningRoomDoorLocked;
+	public static GameObject kitchenDoorLocked;
+	public static GameObject hallwayBDoorLocked;
+	public static GameObject guestBedroomDoorLocked;
+	public static GameObject masterBedroomDoorLocked;
+	public static GameObject studyDoorLocked;
 
 	void Awake (){
 		diningRoomDoorOpened = GameObject.Find ("/Canvas/Doors/diningRoomDoor/Opened");
@@ -33,27 +33,49 @@ public class DoorScript : MonoBehaviour {
 		masterBedroomDoorLocked = GameObject.Find ("/Canvas/Doors/masterBedroomDoor/Closed");
 		studyDoorLocked = GameObject.Find ("/Canvas/Doors/studyDoor/Closed");
 	}
-
 	// Use this for initialization
 	void Start () {
-		
+		diningRoomDoorOpened.gameObject.SetActive (false);
+		kitchenDoorOpened.gameObject.SetActive (false);
+		hallwayBDoorOpened.gameObject.SetActive (false);
+		guestBedroomDoorOpened.gameObject.SetActive (false);
+		masterBedroomDoorOpened.gameObject.SetActive (false);
+		studyDoorOpened.gameObject.SetActive (false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	public void openDoor(string doorName){
+	public static void openDoor(string doorName){
 		if (doorName == "diningRoomDoor"){
-			
+			diningRoomDoorLocked.gameObject.SetActive (false);
+			diningRoomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "kitchenDoor"){
-			
+			kitchenDoorLocked.gameObject.SetActive (false);
+			kitchenDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "hallwayBDoor"){
+			hallwayBDoorLocked.gameObject.SetActive (false);
+			hallwayBDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "guestBedroomDoor"){
+			guestBedroomDoorLocked.gameObject.SetActive (false);
+			guestBedroomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "masterBedroomDoor"){
+			masterBedroomDoorLocked.gameObject.SetActive (false);
+			masterBedroomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "studyDoor"){
+			studyDoorLocked.gameObject.SetActive (false);
+			studyDoorOpened.gameObject.SetActive (true);
 		}
 	}
-
+	public static void unlockDoor(string doorName){
+		if (doorName == "diningRoomDoor" && Save.diningRoomDoorOpen == true){
+			openDoor ("diningRoomDoor");
+		}else if (doorName == "kitchenDoor" && Save.kitchenDoorOpen == true){
+			openDoor ("kitchenDoor");
+		}else if (doorName == "hallwayBDoor" && Save.hallwayBDoorOpen == true){
+			openDoor ("hallwayBDoor");
+		}else if (doorName == "guestBedroomDoor" && Save.guestBedroomDoorOpen == true){
+			openDoor ("guestBedroomDoor");
+		}else if (doorName == "masterBedroomDoor" && Save.masterBedroomDoorOpen == true){
+			openDoor ("masterBedroomDoor");
+		}else if (doorName == "studyDoor" && Save.studyDoorOpen == true){
+			openDoor ("studyDoor");
+		}
+	}
 }

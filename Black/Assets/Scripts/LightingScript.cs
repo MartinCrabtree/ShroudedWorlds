@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LightingScript : MonoBehaviour {
 
-	public GameObject HallwayALights;
-	public GameObject StorageRoomLights;
-	public GameObject DiningRoomLights;
-	public GameObject KitchenLights;
-	public GameObject StartingRoomLights;
+	public static GameObject HallwayALights;
+	public static GameObject StorageRoomLights;
+	public static GameObject DiningRoomLights;
+	public static GameObject KitchenLights;
+	public static GameObject StartingRoomLights;
 
 
 	void Awake (){
@@ -26,13 +26,7 @@ public class LightingScript : MonoBehaviour {
 		KitchenLights.gameObject.SetActive (false);
 		StartingRoomLights.gameObject.SetActive (false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	public void lightRoom (string roomName){
+	public static void lightRoom (string roomName){
 		if (roomName == "HallwayA") {
 			HallwayALights.gameObject.SetActive (true);
 		} else if (roomName == "StorageRoom") {
