@@ -5,6 +5,9 @@ using UnityEngine;
 public class InventoryD2 : MonoBehaviour
 {
 
+    // position.width position.height  not set
+
+
     // for D2 inventory background 321x434
     public Texture2D image;
     public Rect position;
@@ -16,7 +19,8 @@ public class InventoryD2 : MonoBehaviour
     int slotWidth = 10;
     int slotHeight = 4;
 
-    public List<ItemD2> items = new List<ItemD2>();
+
+    public List<ItemD2> items = new List<ItemD2>();   // actual list of items
     public SlotD2[,] slots;
 
     //starting position for grid array
@@ -141,8 +145,9 @@ public class InventoryD2 : MonoBehaviour
         {
             Debug.Log("Draw Items Counter" + counter);
             Debug.Log("items.Count" + items.Count);
-            GUI.DrawTexture(new Rect(slotx * counter + position.x + 2, sloty + position.y + height + 2 , width, height), items[counter].image);
-            
+            GUI.DrawTexture(new Rect(width * counter + position.x + 20, sloty + position.y + height + 2, width, height), items[counter].image);
+            //GUI.DrawTexture(new Rect(slotx * counter + position.x + 2, sloty + position.y + height + 2 , width, height), items[counter].image);
+
         }
         
 

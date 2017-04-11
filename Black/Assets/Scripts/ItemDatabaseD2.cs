@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ItemDatabaseD2 : MonoBehaviour {
 
-    public List<ConsumableD2> consumablesInspector;
+    // public List<ConsumableD2> consumablesInspector;
 
-    private static List<ConsumableD2> consumables;  // !!! static list !!!
+    // private static List<ConsumableD2> consumables;  // !!! static list !!!
     
 	//FOR CREATING CONSUMABLE ITEMS
 	public ConsumableD2 consumable;
@@ -15,7 +15,7 @@ public class ItemDatabaseD2 : MonoBehaviour {
 
     void Start()
     {
-        consumables = consumablesInspector;
+        // consumables = consumablesInspector;
 
         //CREATE ALL ITEMS HERE
         // consumable = new ConsumableD2(1,"healingpot","A_Armor04", 10, 4);
@@ -32,14 +32,14 @@ public class ItemDatabaseD2 : MonoBehaviour {
 		//SEARCH THROUGH CURRENT INVENTORY DATABASE OF CREATED ITEMS
 		foreach (ItemD2 item in ItemD2.inventoryDatabase) {
 			if (item.name == itemName) {
-				Debug.Log (item.name + " is found");
+				// Debug.Log (item.name + " is found");
 				consumablePlaceholder.image = item.image;
                 consumablePlaceholder.width = item.width;
                 consumablePlaceholder.height = item.height;
                 consumablePlaceholder.name = item.name;
 				consumablePlaceholder.count = item.count;
 			} else {
-				Debug.Log (item.name + " is not found");
+				// Debug.Log (item.name + " is not found");
 			}
 		}
 		return consumablePlaceholder;
