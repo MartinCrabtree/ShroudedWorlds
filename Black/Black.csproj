@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -66,6 +69,9 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -111,25 +117,41 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\Scripts\ConsumableD2.cs" />
+    <Compile Include="Assets\Scripts\Audio.cs" />
+    <Compile Include="Assets\Scripts\DoorScript.cs" />
+    <Compile Include="Assets\Scripts\Doors\DiningRoom.cs" />
+    <Compile Include="Assets\Scripts\Doors\GuestBedroom.cs" />
+    <Compile Include="Assets\Scripts\Doors\HallwayB.cs" />
+    <Compile Include="Assets\Scripts\Doors\Kitchen.cs" />
+    <Compile Include="Assets\Scripts\Doors\MasterBedroom.cs" />
+    <Compile Include="Assets\Scripts\Doors\Study.cs" />
+    <Compile Include="Assets\Scripts\EnvironmentalDamage.cs" />
     <Compile Include="Assets\Scripts\FadeAlpha.cs" />
-    <Compile Include="Assets\Scripts\Inventory.cs" />
-    <Compile Include="Assets\Scripts\InventoryD2.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\ItemD2.cs" />
-    <Compile Include="Assets\Scripts\ItemDatabaseD2.cs" />
-    <Compile Include="Assets\Scripts\ItemSlotBehavior.cs" />
     <Compile Include="Assets\Scripts\Journal.cs" />
+    <Compile Include="Assets\Scripts\LightingScript.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\AllConditions.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\Condition.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\ConditionCollection.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\EditorWithSubEditors.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\InventoryAddItem.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\InventoryEditor.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\InventoryV3.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\Item.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\PickupHandler.cs" />
     <Compile Include="Assets\Scripts\Lore Objects\bed.cs" />
     <Compile Include="Assets\Scripts\Lore Objects\testLoreObject.cs" />
     <Compile Include="Assets\Scripts\Lore.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
-    <Compile Include="Assets\Scripts\SlotD2.cs" />
-    <Compile Include="Assets\Scripts\itemDatabase.cs" />
+    <Compile Include="Assets\Scripts\TEST.cs" />
+    <Compile Include="Assets\_MK\_MKGlow\_Demo\Code\MK_DemoControl.cs" />
+    <Compile Include="Assets\_MK\_MKGlow\_Demo\Code\MK_RotateObject.cs" />
+    <Compile Include="Assets\_MK\_MKGlow\_Internal\MKGlow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3DForge\Fantasy_Interiors\Villages_%26_Towns\Documents\Village Interiors User Guide v1.9.txt" />
     <None Include="Assets\3DForge\Top-Down ARPG Camera %26 Controller\Shaders\SolidColorBehindObjects.shader" />
+    <None Include="Assets\Hand painted bottle\readme.txt" />
+    <None Include="Assets\Models\Key\readME keys.txt" />
     <None Include="Assets\Resources\Readme.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
@@ -230,6 +252,68 @@
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Cutout\MK_Cutout-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Cutout\MK_Cutout-DiffuseBumpSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Cutout\MK_Cutout-DiffuseBumped.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Cutout\MK_Cutout-Glossy.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Cutout\MK_Cutout-SoftEdgeUnlit.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Emission\MK_Emission-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-DiffuseBumpSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-DiffuseBumped.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-Glossy.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-Parallax.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Illumin\MK_Illumin-ParallaxSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Lightmapped\MK_Lightmap-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Lightmapped\MK_Lightmap-DiffuseBumped.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Mobile\MK_Mobile-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Mobile\MK_Mobile-DiffuseBumpSpec-1DirectionalLight.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Mobile\MK_Mobile-DiffuseBumpSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Mobile\MK_Mobile-DiffuseBumped.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-DiffuseBumpRim.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-DiffuseBumpSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-DiffuseBumped.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-DiffuseDetail.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-DiffuseRim.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-Glossy.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-Parallax.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Normal\MK_Normal-ParallaxSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-Additive.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-AdditiveBlend.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-AdditiveMultiply.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-AdditiveSoft.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-Blend.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-MulitplyDouble.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-Multiply.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Particles\MK_Particles-PremultiplyBlend.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Reflective\MK_Reflective-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Reflective\MK_Reflective-DiffuseBumpSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Reflective\MK_Reflective-DiffuseBumped.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Reflective\MK_Reflective-DiffuseBumpedNoLight.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Reflective\MK_Reflective-Glossy.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Reflective\MK_Reflective-Parallax.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Reflective\MK_Reflective-ParallaxSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Sprites\MK_Sprite-Default.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Sprites\MK_Sprite-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Toon\MK_Toon-Basic.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Toon\MK_Toon-BasicOutline.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-Diffuse.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-DiffuseBumpRim.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-DiffuseBumpSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-DiffuseBumped.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-DiffuseRim.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-Glossy.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-Parallax.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Transparent\MK_Transparent-ParallaxSpec.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Unlit\MK_Unlit-Normal.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Unlit\MK_Unlit-Transparent.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKBase\Unlit\MK_Unlit-TransparentCutout.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKGlowEffect\MKGlowBlur.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKGlowEffect\MKGlowBlurVHP.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKGlowEffect\MKGlowCompose.shader" />
+    <None Include="Assets\_MK\_MKGlow\_Shader\_MKGlowEffect\MKGlowRender.shader" />
+    <None Include="Assets\plants\dd\AlphaTest-Bumped.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
