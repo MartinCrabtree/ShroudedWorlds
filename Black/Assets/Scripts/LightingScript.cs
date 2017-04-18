@@ -9,6 +9,9 @@ public class LightingScript : MonoBehaviour {
 	public static GameObject DiningRoomLights;
 	public static GameObject KitchenLights;
 	public static GameObject StartingRoomLights;
+	public static GameObject EastWingLights; // Rest of the lights on the east wing
+	public static GameObject HearthFire;
+	public static GameObject PlayerLight;
 
 	void Awake (){
 		HallwayALights = GameObject.Find ("/Canvas/RoomLights/HallwayALights");
@@ -16,6 +19,9 @@ public class LightingScript : MonoBehaviour {
 		DiningRoomLights = GameObject.Find ("/Canvas/RoomLights/DiningRoomLights");
 		KitchenLights = GameObject.Find ("/Canvas/RoomLights/KitchenLights");
 		StartingRoomLights = GameObject.Find ("/Canvas/RoomLights/StartingRoomLights");
+		EastWingLights = GameObject.Find ("/LIGHTS");
+		HearthFire = GameObject.Find ("/Canvas/Hearth/firewood");
+		PlayerLight = GameObject.Find ("/player camera/player/lightsource");
 	}
 	// Use this for initialization
 	void Start () {
@@ -24,6 +30,9 @@ public class LightingScript : MonoBehaviour {
 		DiningRoomLights.gameObject.SetActive (false);
 		KitchenLights.gameObject.SetActive (false);
 		StartingRoomLights.gameObject.SetActive (false);
+		EastWingLights.gameObject.SetActive (false);
+		HearthFire.gameObject.SetActive (false);
+		PlayerLight.gameObject.SetActive (false);
 	}
 	// Enables the room lights for said rooms
 	public static void lightRoom (string roomName){
@@ -43,5 +52,20 @@ public class LightingScript : MonoBehaviour {
 			Debug.Log ("lighting Starting Room");
 			StartingRoomLights.gameObject.SetActive (true);
 		}
+	}
+	// Sets the hearth to be burning or not
+	public static void lightHearth (bool truefalse){
+		if (truefalse == true){
+			HearthFire.gameObject.SetActive (true);
+		} else if (truefalse == false){
+			HearthFire.gameObject.SetActive (false);
+		}
+	}
+	public static void lightPlayer (bool truefalse){
+		if (truefalse == true){
+			PlayerLight.gameObject.SetActive (true);
+		} else if (truefalse == false){
+			PlayerLight.gameObject.SetActive (false);
+		}		
 	}
 }
