@@ -25,18 +25,23 @@ public class Audio : MonoBehaviour {
 	// Called before any Start functions
 	void Awake(){
 		// Add all audioclips to the list of audioclips
-		audioClips.Add(new AudioObject("audioone", "boing"));
-		audioClips.Add(new AudioObject("audiotwo", "chime"));
+		audioClips.Add(new AudioObject("audioone", "boing")); // TEST
+		audioClips.Add(new AudioObject("audiotwo", "chime")); // TEST
+		audioClips.Add(new AudioObject("scribble", "scribble"));
 	}
 	// Called before the first frame update
 	void Start () {
 		//Test audio playback
-		PlaySoundOne ("audioone");
-		PlaySoundTwo ("audiotwo");
+//		PlaySoundOne ("audioone");
+//		PlaySoundTwo ("audiotwo");
 	}
 	// Called once per frame
 	void Update () {
-
+		// Auto play based on boolean
+		if(Save.journalscribble == true){
+			PlaySoundOne ("scribble");
+			Save.journalscribble = false;
+		}
 	}
 	// HELPER FUNCTIONS
 

@@ -15,6 +15,7 @@ public class Journal : MonoBehaviour {
 	public static GameObject rightPanelLock;
 	public static Text leftText;
 	public static Text rightText;
+
 	public static Image leftImage;
 	public static Image rightImage;
 	public static Button arrowRight;

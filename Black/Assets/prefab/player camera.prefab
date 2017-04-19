@@ -1494,6 +1494,7 @@ GameObject:
   - component: {fileID: 4822939157293474}
   - component: {fileID: 114017325937516588}
   - component: {fileID: 143604950533175670}
+  - component: {fileID: 136409292948022114}
   m_Layer: 10
   m_Name: player
   m_TagString: Player
@@ -4880,6 +4881,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1707414575561944}
   m_Enabled: 1
+--- !u!136 &136409292948022114
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636801697193306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5089798
+  m_Height: 2.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!137 &137472057990982674
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

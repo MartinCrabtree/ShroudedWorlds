@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Lore : MonoBehaviour {
-
+	
 	public class LoreItem{
 		public string loreText;
 		public string lorePicture;
@@ -36,9 +36,12 @@ public class Lore : MonoBehaviour {
 		foreach (Lore.LoreItem item in Save.lore) {
 			if(item.loreName == name){
 				item.locked = false;
+				//Play scribble sound
+				Save.journalscribble = true;
 				Debug.Log (item.loreName + " locked status is now " + item.locked);
 			}
 			Debug.Log (item.loreName + " locked status is now " + item.locked);
 		}
+//		Debug.Log ("Save.JournalScribble is: " + Save.journalscribble);
 	}
 }

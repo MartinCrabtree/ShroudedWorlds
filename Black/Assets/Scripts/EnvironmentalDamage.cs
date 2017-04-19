@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnvironmentalDamage : MonoBehaviour {
 
@@ -28,8 +29,6 @@ public class EnvironmentalDamage : MonoBehaviour {
 	// Update control variables
 	public bool iceLevelCountdown = true;
 	public bool poisonLevelCountdown = true;
-
-	//DELETE - this is temporary for update control variable for poisoning player
 	public bool temp = true;
 
 	void Awake(){
@@ -46,8 +45,8 @@ public class EnvironmentalDamage : MonoBehaviour {
 		poisonLevelOne = GameObject.Find ("/Canvas/poisonPanel/poisonLevelOne");
 		poisonLevelTwo = GameObject.Find ("/Canvas/poisonPanel/poisonLevelTwo");
 		poisonLevelThree = GameObject.Find ("/Canvas/poisonPanel/poisonLevelThree");
-
 		poisonGasPanel = GameObject.Find ("/Canvas/Poison Gas");
+
 	}
 	// Use this for initialization
 	void Start () {
@@ -56,6 +55,7 @@ public class EnvironmentalDamage : MonoBehaviour {
 		iceLevelOne.gameObject.SetActive (false);
 		iceLevelTwo.gameObject.SetActive (false);
 		iceLevelThree.gameObject.SetActive (false);
+
 		poisonLevelOne.gameObject.SetActive (false);
 		poisonLevelTwo.gameObject.SetActive (false);
 		poisonLevelThree.gameObject.SetActive (false);
@@ -107,11 +107,10 @@ public class EnvironmentalDamage : MonoBehaviour {
 		}
 
 		// POISON ENVIRONMENTAL CONTROLS
-		// Initiate poison gas - EDIT LATER, A TEMPORARY VARIABLE IS HERE, AND POISON GAS PANEL SHOULD NOT BE TRIGGERED LIKE THIS
-		if (Save.poisonInitiate == true && poisonLevelCountdown == true && temp == true){
-			Debug.Log ("Poison Gas Room Initiated");
-			poisonGasPanel.gameObject.SetActive (true);
-			//TEMP
+		// Initiate poison gas
+		if (Save.poisonGasAnimationStart == true && poisonLevelCountdown == true && temp == true){
+			Debug.Log ("Poison Gas Room Plane Initiated, Poison Gas Animation Started");
+			poisonGasPanel.SetActive (true);
 			temp = false;
 		}
 		// If poisoned, increase poison level with time, if not poisonimmune
@@ -145,6 +144,7 @@ public class EnvironmentalDamage : MonoBehaviour {
 		}
 		// Became poison immune, remove poison screen
 		if (Save.poisonImmune == true && poisonLevelCountdown == false){
+
 			poisonLevelOne.gameObject.SetActive (false);
 			poisonLevelTwo.gameObject.SetActive (false);
 			poisonLevelThree.gameObject.SetActive (false);

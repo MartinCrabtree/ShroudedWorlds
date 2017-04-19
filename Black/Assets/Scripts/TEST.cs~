@@ -62,8 +62,10 @@ public class TEST : MonoBehaviour {
 	}
 	public void poisonstart1(){
 		Debug.Log ("pressed button");
-		Save.poisonInitiate = true;
-		Debug.Log ("Poisoning Player");
+		//Save.poisonInitiate = true;
+		//Debug.Log ("Poisoning Player");
+		Save.poisonGasAnimationStart = true;
+		Debug.Log ("Initiating Poison Chamber");
 	}
 	public void poisonimmune1(){
 		Debug.Log ("pressed button");

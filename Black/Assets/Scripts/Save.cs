@@ -25,9 +25,15 @@ public class Save : MonoBehaviour {
 	// PROCESS Set this to true when poison immunity potion is crafted
 	public static bool poisonImmune = false;
 
-	// PROCESS Set this to true when the player tries to break into the study
+	// Set this to true when the poison collides with the poison plane
 	public static bool poisonInitiate = false;
+
+	// PROCESS Set this to true when the player tries to break into the study
+	public static bool poisonGasAnimationStart = false;
 
 	//TEMP - remove after testing and ice is implemented
 	public static bool icetesting = false;
+
+	//Play Sounds
+	public static bool journalscribble = false;
 }
