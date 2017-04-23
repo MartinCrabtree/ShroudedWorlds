@@ -13,5 +13,21 @@
         "imagefile": "I_Bottle03",
         "craftable": true
 
+    },
+    {
+        "id": 2,
+        "title": "Medical Herb",
+        "value": 1,
+        "imagefile": "I_Leaf",
+        "craftable": true
+
+    },
+    {
+        "id": 3,
+        "title": "Antidote Potion",
+        "value": 1,
+        "imagefile": "I_Antidote",
+        "craftable": false
+
     }
 ]
