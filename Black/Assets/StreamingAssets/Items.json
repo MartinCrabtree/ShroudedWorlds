@@ -1,0 +1,17 @@
+[
+    {
+        "id": 0,
+        "title": "Silver Key",
+        "value": 1,
+        "imagefile": "I_Key02", 
+        "craftable": false
+    },
+    {
+        "id": 1,
+        "title": "Empty Flask",
+        "value": 1,
+        "imagefile": "I_Bottle03",
+        "craftable": true
+
+    }
+]

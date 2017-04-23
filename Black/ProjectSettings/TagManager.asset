@@ -8,6 +8,10 @@ TagManager:
   - Items
   - Inventory
   - itemDatabase
+  - Herb
+  - Tenderizer
+  - Crowbar
+  - KeySilver
   layers:
   - Default
   - TransparentFX
