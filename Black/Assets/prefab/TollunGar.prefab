@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4171300221563724}
   - component: {fileID: 95516815322943030}
+  - component: {fileID: 114972264043196532}
   m_Layer: 0
   m_Name: TollunGar
   m_TagString: Untagged
@@ -696,6 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4378569499567790}
   - component: {fileID: 137626305109513788}
+  - component: {fileID: 65193072556026740}
   m_Layer: 0
   m_Name: SM_Skeleton_Base
   m_TagString: Untagged
@@ -2026,6 +2028,18 @@ Transform:
   m_Father: {fileID: 4496928250463722}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65193072556026740
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636604313049872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47785017, y: 0.17268276, z: 0.7224437}
+  m_Center: {x: 0.0002685547, y: 0.006109774, z: 0.37479308}
 --- !u!95 &95516815322943030
 Animator:
   serializedVersion: 3
@@ -2043,6 +2057,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114972264043196532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1013795591441512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e1e8c97f878f94aa92baa87da467a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137626305109513788
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2134,6 +2159,6 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 4816082554088580}
   m_AABB:
-    m_Center: {x: 0.060858548, y: 0.019037113, z: -0.00026360154}
-    m_Extent: {x: 0.37712032, y: 0.082360186, z: 0.23892432}
+    m_Center: {x: 0.060858548, y: 0.019037113, z: 0.0054445937}
+    m_Extent: {x: 0.37712032, y: 0.082360186, z: 0.17430994}
   m_DirtyAABB: 0

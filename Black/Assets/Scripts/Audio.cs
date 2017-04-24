@@ -25,12 +25,13 @@ public class Audio : MonoBehaviour {
 	// Called before any Start functions
 	void Awake(){
 		// Add all audioclips to the list of audioclips
-		audioClips.Add(new AudioObject("audioone", "boing")); // TEST
-		audioClips.Add(new AudioObject("audiotwo", "chime")); // TEST
+		audioClips.Add(new AudioObject("ambient", "ambient"));
+		audioClips.Add(new AudioObject("unlock", "unlock"));
 		audioClips.Add(new AudioObject("scribble", "scribble"));
 	}
 	// Called before the first frame update
 	void Start () {
+		PlayAmbient ("ambient");
 		//Test audio playback
 //		PlaySoundOne ("audioone");
 //		PlaySoundTwo ("audiotwo");
@@ -41,6 +42,30 @@ public class Audio : MonoBehaviour {
 		if(Save.journalscribble == true){
 			PlaySoundOne ("scribble");
 			Save.journalscribble = false;
+		}
+		if(Save.diningRoomDoorOpenSound == true){
+			PlaySoundOne ("unlock");
+			Save.diningRoomDoorOpenSound = false;
+		}
+		if(Save.kitchenDoorOpenSound == true){
+			PlaySoundOne ("unlock");
+			Save.kitchenDoorOpenSound = false;
+		}
+		if(Save.hallwayBDoorOpenSound == true){
+			PlaySoundOne ("unlock");
+			Save.hallwayBDoorOpenSound = false;
+		}
+		if(Save.guestBedroomDoorOpenSound == true){
+			PlaySoundOne ("unlock");
+			Save.guestBedroomDoorOpenSound = false;
+		}
+		if(Save.masterBedroomDoorOpenSound == true){
+			PlaySoundOne ("unlock");
+			Save.masterBedroomDoorOpenSound = false;
+		}
+		if(Save.studyDoorOpenSound == true){
+			PlaySoundOne ("unlock");
+			Save.studyDoorOpenSound = false;
 		}
 	}
 	// HELPER FUNCTIONS

@@ -16,8 +16,8 @@ public class Journal : MonoBehaviour {
 	public static Text leftText;
 	public static Text rightText;
 
-	public static Image leftImage;
-	public static Image rightImage;
+//	public static Image leftImage;
+//	public static Image rightImage;
 	public static Button arrowRight;
 	public static Button arrowLeft;
 	public static Button close;
@@ -31,8 +31,8 @@ public class Journal : MonoBehaviour {
 		rightPanelLock = GameObject.Find ("/Canvas/UILockPanel/Journal/rightlockedpanel");
 		leftText = GameObject.Find ("/Canvas/UILockPanel/Journal/leftpage/textleftpage").GetComponent<Text>();
 		rightText = GameObject.Find ("/Canvas/UILockPanel/Journal/rightpage/textrightpage").GetComponent<Text>();
-		leftImage = GameObject.Find ("/Canvas/UILockPanel/Journal/leftpage/leftimage").GetComponent<Image>();
-		rightImage = GameObject.Find ("/Canvas/UILockPanel/Journal/rightpage/rightimage").GetComponent<Image>();
+//		leftImage = GameObject.Find ("/Canvas/UILockPanel/Journal/leftpage/leftimage").GetComponent<Image>();
+//		rightImage = GameObject.Find ("/Canvas/UILockPanel/Journal/rightpage/rightimage").GetComponent<Image>();
 
 		arrowRight = GameObject.Find ("/Canvas/UILockPanel/Journal/arrowright").GetComponent<Button>();
 		arrowLeft = GameObject.Find ("/Canvas/UILockPanel/Journal/arrowleft").GetComponent<Button>();
@@ -56,9 +56,9 @@ public class Journal : MonoBehaviour {
 		pageNumberLeft = left;
 		pageNumberRight = right;
 
-		leftImage.sprite = Resources.Load<Sprite> (Save.lore [left].lorePicture);
+//		leftImage.sprite = Resources.Load<Sprite> (Save.lore [left].lorePicture);
 		leftText.text = Save.lore [left].loreText;
-		rightImage.sprite = Resources.Load<Sprite> (Save.lore [right].lorePicture);
+//		rightImage.sprite = Resources.Load<Sprite> (Save.lore [right].lorePicture);
 		rightText.text = Save.lore [right].loreText;
 
 		if (Save.lore [left].locked == false) {

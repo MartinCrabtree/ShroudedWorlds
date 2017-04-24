@@ -104,3 +104,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed0ce3ea2a9a904da78b73a1a6833d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  journalFirstTime: 1

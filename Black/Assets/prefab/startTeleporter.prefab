@@ -38,6 +38,8 @@ GameObject:
   - component: {fileID: 4647203914802860}
   - component: {fileID: 198470478570544426}
   - component: {fileID: 199177821716022666}
+  - component: {fileID: 65943822214441860}
+  - component: {fileID: 114435073998483488}
   m_Layer: 0
   m_Name: 01_1
   m_TagString: Untagged
@@ -599,6 +601,30 @@ Transform:
   m_Father: {fileID: 4875977329036070}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65943822214441860
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167408253683554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.724617, y: 10.724639, z: 0.9526117}
+  m_Center: {x: 0.0004569441, y: 0.0000038444996, z: 0.262291}
+--- !u!114 &114435073998483488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167408253683554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d91d949e84a694d92eda1c72f79609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTeleporterFirstTime: 1
 --- !u!198 &198020137816594088
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -5904,7 +5930,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1746538062
+  randomSeed: 818969086
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -32142,7 +32168,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1561833224
+  randomSeed: 533863935
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -37392,7 +37418,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 644181409
+  randomSeed: -371514072
   InitialModule:
     serializedVersion: 3
     enabled: 1
