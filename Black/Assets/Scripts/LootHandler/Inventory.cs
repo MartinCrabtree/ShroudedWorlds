@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
-    public GameObject inventoryPanel;
-    public GameObject slotPanel;
+    GameObject inventoryPanel;
+    GameObject slotPanel;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
     ItemDatabase database;
@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour {
         }
 
         // for testing
-        //AddItem(2);
+        AddItem(2);
         
 
     }
