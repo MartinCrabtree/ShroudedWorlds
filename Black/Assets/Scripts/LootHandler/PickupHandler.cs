@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickupHandler : MonoBehaviour {
 
+    public int itemID;
+
     // item dissapears when player collides
     /*
 	void OnCollisionEnter()
@@ -12,6 +14,7 @@ public class PickupHandler : MonoBehaviour {
         this.GetComponent<MeshRenderer>().enabled = false;
     }
     */
+    
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,6 +22,8 @@ public class PickupHandler : MonoBehaviour {
 
         this.GetComponent<SphereCollider>().enabled = false;
         this.GetComponent<MeshRenderer>().enabled = false;
+
+        InventoryAddItem.passItemID(itemID);
     }
 
 }

@@ -6,15 +6,18 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryAddItem : MonoBehaviour {
-    public GameObject inventoryWindow;
-    //public GameObject[] inventoryIcons;
-    public int pickupObjectID = 2;  // 1 set for testing
+
+    public GameObject inventoryPanel;
+    public GameObject slotPanel;
+    
+    int pickupObjectID;  
 
     private Inventory inv; // get access to inventory object
     
     void Start()
     {
-        inv = GameObject.Find("InventoryPanel").GetComponent<Inventory>();
+        inventoryPanel = GameObject.Find("InventoryPanel");
+        slotPanel = inventoryPanel.transform.FindChild("SlotPanel").gameObject;
 
 
     }
@@ -24,9 +27,12 @@ public class InventoryAddItem : MonoBehaviour {
 
     void OnTriggerEnter(Collider collision)
     {
+        //Debug.Log(pickupObjectID);
         // add object to inventory window
-        addToInventory(pickupObjectID);
-
+        //addToInventory(pickupObjectID);
+        //Inventory.InventoryTest(pickupObjectID);
+        
+        
     }
 
 
@@ -35,9 +41,14 @@ public class InventoryAddItem : MonoBehaviour {
         Debug.Log("Attempting to pickup object ID " + pickupObjectID);
         inv.AddItem(pickupObjectID);
         
+        
         // inv.AddItem(pickupObjectID);
     }
 
+    public static void passItemID(int pickupObjectID)
+    {
+        Inventory.InventoryTest(pickupObjectID);
+    }
 
 
     /*

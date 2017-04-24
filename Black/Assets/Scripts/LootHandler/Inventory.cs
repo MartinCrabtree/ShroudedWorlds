@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
-    GameObject inventoryPanel;
-    GameObject slotPanel;
+    public GameObject inventoryPanel;
+    public GameObject slotPanel;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
     ItemDatabase database;
 
     public int slotAmount = 16;
+
+    public static bool testing = false;
+    public static int testingInt;
 
     
     public List<ItemV2> items = new List<ItemV2>();
@@ -39,22 +42,38 @@ public class Inventory : MonoBehaviour {
         }
 
         // for testing
-        AddItem(2);
+        //AddItem(2);
+        
+
+    }
+
+    void Update()
+    {
+
+        //AddItem(3);
+        
+        if (testing == true)
+        {
+            
+            AddItem(3);
+            
+            testing = false;
+            
+        }
         
         
-
-
-
     }
 
     public void AddItem(int id)
     {
         ItemV2 itemToAdd = database.FetchItemByID(id);
 
-        // check for item in enventory for stacking
+        
+        // check for item in inventory for stacking
         if(itemToAdd.Stackable && CheckIfItemIsInInventory(itemToAdd))
         {
-            for(int i = 0; i < items.Count; i++)
+            Debug.Log("Attempting to add a stacked item " + id);
+            for (int i = 0; i < items.Count; i++)
             {
                 if(items[i].ID == id)
                 {
@@ -67,12 +86,15 @@ public class Inventory : MonoBehaviour {
         }
         else
         {
+            
             // find empty slot and add to inventory array and set parent
             for (int i = 0; i < items.Count; i++)
             {
-
+                
                 if (items[i].ID == -1)
                 {
+                    Debug.Log("Attempting to add a new item");
+
                     items[i] = itemToAdd;
                     GameObject itemObj = Instantiate(inventoryItem);
                     itemObj.GetComponent<ItemData>().item = itemToAdd;
@@ -92,6 +114,21 @@ public class Inventory : MonoBehaviour {
         
         
     }
+
+
+    /// <summary>
+    ///  for testing
+    /// </summary>
+    
+    public static void InventoryTest(int id)
+    {
+        testing = true;
+        testingInt = id;
+        Debug.Log("Testing function set to true");
+    }
+
+
+
 
     bool CheckIfItemIsInInventory(ItemV2 item)
     {
