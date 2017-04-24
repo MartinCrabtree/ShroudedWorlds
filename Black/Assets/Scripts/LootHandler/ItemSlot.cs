@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 /// <summary>
 /// Handles item swapping for Drag/Drop updates item data when the item is dropped
+/// Attached to Slot prefab
 /// </summary>
 
 
@@ -16,7 +17,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     void Start()
     {
-        inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+        inv = GameObject.Find("InventoryPanel").GetComponent<Inventory>();
     }
 
 
@@ -27,17 +28,18 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         // see if an item is already in the slot being dropped on
         if (inv.items[slotID].ID == -1)
         {
-            // probably redundant
-            // droppedItem.transform.SetParent(this.transform);
-            // droppedItem.transform.position = this.transform.position;
+            
             inv.items[droppedItem.slotLocation] = new ItemV2();  // clear out previous item slot and set to null
             inv.items[slotID] = droppedItem.item;
 
             droppedItem.slotLocation = slotID;
+            
         }
         else // swap items if an item already exists
         {
             Transform slotOccupied = this.transform.GetChild(0);
+            
+
             // swap position of placed item with the original location of the item being dropped
             slotOccupied.GetComponent<ItemData>().slotLocation = droppedItem.slotLocation;
             slotOccupied.transform.SetParent(inv.slots[droppedItem.slotLocation].transform);

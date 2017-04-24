@@ -45,7 +45,7 @@ public class ItemDatabase : MonoBehaviour {
         for (int i = 0; i < itemData.Count; i++)
         {
             // populate item list from file
-            database.Add(new ItemV2((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["value"], itemData[i]["imagefile"].ToString(),(bool)itemData[i]["craftable"]));
+            database.Add(new ItemV2((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["value"], itemData[i]["imagefile"].ToString(),(bool)itemData[i]["craftable"], (bool)itemData[i]["stackable"]));
         }
     }
 }
@@ -56,27 +56,30 @@ public class ItemV2
     public string Title { get; set; }
     public int Value { get; set; }
     public bool Craftable { get; set; }
+    public bool Stackable { get; set; }
     public string Imagefile { get; set; }
     public Sprite Sprite { get; set; }
 
-    public ItemV2(int id, string title, int value, string imagefile, bool craftable)
+    public ItemV2(int id, string title, int value, string imagefile, bool craftable, bool stackable)
     {
         this.ID = id;
         this.Title = title;
         this.Value = value;
         this.Craftable = craftable;
+        this.Stackable = stackable;
         this.Sprite = Resources.Load<Sprite>(imagefile);
-        Debug.Log("The image file being loaded is " + imagefile);
+        
     }
 
     // probably won't use value so constructor without
-    public ItemV2(int id, string title, string imagefile, bool craftable)
+    public ItemV2(int id, string title, string imagefile, bool craftable, bool stackable)
     {
         this.ID = id;
         this.Title = title;
         this.Craftable = craftable;
+        this.Stackable = stackable;
         this.Sprite = Resources.Load<Sprite>(imagefile);
-        Debug.Log("The image file being loaded is " + imagefile);
+        
     }
 
     public ItemV2()

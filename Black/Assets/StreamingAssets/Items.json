@@ -3,6 +3,7 @@
         "id": 0,
         "title": "Silver Key",
         "value": 1,
+        "stackable": false,
         "imagefile": "I_Key02", 
         "craftable": false
     },
@@ -10,6 +11,7 @@
         "id": 1,
         "title": "Empty Flask",
         "value": 1,
+        "stackable": true,
         "imagefile": "I_Bottle03",
         "craftable": true
 
@@ -18,6 +20,7 @@
         "id": 2,
         "title": "Medical Herb",
         "value": 1,
+        "stackable": true,
         "imagefile": "I_Leaf",
         "craftable": true
 
@@ -26,8 +29,107 @@
         "id": 3,
         "title": "Antidote Potion",
         "value": 1,
+        "stackable": true,
         "imagefile": "I_Antidote",
         "craftable": false
 
+    },
+    {
+        "id": 4,
+        "title": "Crowbar",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "W_Axe004",
+        "craftable": false
+
+    },
+    {
+        "id": 5,
+        "title": "Torch Unlit",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "I_Torch01",
+        "craftable": true
+
+    },
+    {
+        "id": 6,
+        "title": "Torch Lit",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "I_Torch02",
+        "craftable": false
+
+    },
+    {
+        "id": 7,
+        "title": "Candle",
+        "value": 1,
+        "stackable": true,
+        "imagefile": "S_Fire03",
+        "craftable": true
+
+    },
+    {
+        "id": 8,
+        "title": "Magical Light",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "S_Light01",
+        "craftable": true
+
+    },
+    {
+        "id": 9,
+        "title": "Tenderizer",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "W_Mace003",
+        "craftable": true
+
+    },
+    {
+        "id": 10,
+        "title": "Lense",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "I_Telescope",
+        "craftable": true
+
+    },
+    {
+        "id": 11,
+        "title": "Tongs",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "I_ScorpionClaw",
+        "craftable": true
+
+    },
+    {
+        "id": 12,
+        "title": "Recipt",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "I_Fabric",
+        "craftable": false
+
+    },
+    {
+        "id": 12,
+        "title": "Blank Scroll",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "I_Scroll",
+        "craftable": true
+
     }
+
+
+
+
+
+
+
+
 ]
