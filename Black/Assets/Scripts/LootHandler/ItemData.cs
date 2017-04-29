@@ -14,8 +14,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public ItemV2 item;
     public int amount;
     public int slotLocation; // for drag/drop location
-
-    
+        
 
     private Inventory inv;
     
@@ -65,7 +64,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
     }
 
-    public void OnEndDrag(PointerEventData eventData)  //// used after on drop in ItemSlot
+    public void OnEndDrag(PointerEventData eventData)  //// used after OnDrop in ItemSlot
     {
         
 

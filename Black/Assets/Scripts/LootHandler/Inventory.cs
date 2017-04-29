@@ -14,15 +14,16 @@ public class Inventory : MonoBehaviour {
 
     public int slotAmount = 16;
 
-    public static bool testing = false;
-    public static int testingInt;
-
     
+
+
     public List<ItemV2> items = new List<ItemV2>();
     public List<GameObject> slots = new List<GameObject>();
 
     void Start()
     {
+        
+
         Debug.Log("Starting Inventory script");
 
         database = GetComponent<ItemDatabase>(); // used in AddItem()
@@ -41,25 +42,14 @@ public class Inventory : MonoBehaviour {
 
         }
 
-        // for testing
-        AddItem(2);
+        
         
 
     }
 
     void Update()
     {
-
-        //AddItem(3);
         
-        if (testing == true)
-        {
-            
-            AddItem(3);
-            
-            testing = false;
-            
-        }
         
         
     }
@@ -93,18 +83,19 @@ public class Inventory : MonoBehaviour {
                 
                 if (items[i].ID == -1)
                 {
-                    Debug.Log("Attempting to add a new item");
+                    
 
                     items[i] = itemToAdd;
                     GameObject itemObj = Instantiate(inventoryItem);
                     itemObj.GetComponent<ItemData>().item = itemToAdd;
                     itemObj.GetComponent<ItemData>().slotLocation = i;  // location data for Drag/Drop
                     itemObj.transform.SetParent(slots[i].transform);
-                    itemObj.transform.position = Vector2.zero; // placement center of the slot
+                    itemObj.transform.position = slots[i].transform.position;
+                    //itemObj.transform.position = Vector2.zero; // placement center of the slot
                     itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                     itemObj.name = itemToAdd.Title;
 
-                    // Debug.Log("Item Added To Inventory " + items[i].ID);
+                    
 
                     break;
                 }
@@ -115,20 +106,8 @@ public class Inventory : MonoBehaviour {
         
     }
 
-
-    /// <summary>
-    ///  for testing
-    /// </summary>
     
-    public static void InventoryTest(int id)
-    {
-        testing = true;
-        testingInt = id;
-        Debug.Log("Testing function set to true");
-    }
-
-
-
+    
 
     bool CheckIfItemIsInInventory(ItemV2 item)
     {

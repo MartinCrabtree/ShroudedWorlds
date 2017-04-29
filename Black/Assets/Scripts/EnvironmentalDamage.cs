@@ -72,17 +72,20 @@ public class EnvironmentalDamage : MonoBehaviour {
 			StartCoroutine(iceLevelHandler());
 		}
 		if(Save.currentIceLevel == 1 && iceLevelCountdown == true){
+			Save.setGlobalMessage ("It's so cold in here..");
 			iceLevelCountdown = false;
 			iceLevelOne.gameObject.SetActive (true);
 			StartCoroutine(iceLevelHandler());
 		}
 		if(Save.currentIceLevel == 2 && iceLevelCountdown == true){
+			Save.setGlobalMessage ("Frost gathers on your upper lip..");
 			iceLevelCountdown = false;
 			iceLevelOne.gameObject.SetActive (false);
 			iceLevelTwo.gameObject.SetActive (true);
 			StartCoroutine(iceLevelHandler());
 		}
 		if (Save.currentIceLevel == 3 && iceLevelCountdown == true){
+			Save.setGlobalMessage ("You feel your body start to slow down..");
 			iceLevelCountdown = false;
 			iceLevelTwo.gameObject.SetActive (false);
 			iceLevelThree.gameObject.SetActive (true);
@@ -90,6 +93,7 @@ public class EnvironmentalDamage : MonoBehaviour {
 		}
 		// When ice level is at highest, reduce movement speed
 		if (Save.currentIceLevel > 3 && iceLevelCountdown == true){
+			Save.setGlobalMessage ("You can't move as well.. it's too cold..");
 			iceLevelCountdown = false;
 			Debug.Log ("Adjusting player speed to 2");
 			ARPGPlayerMoveNew.moveSpeed = 2;
@@ -116,20 +120,24 @@ public class EnvironmentalDamage : MonoBehaviour {
 		// If poisoned, increase poison level with time, if not poisonimmune
 		if (Save.poisonImmune == false && Save.currentPoisonLevel == 0 && Save.poisonInitiate == true && poisonLevelCountdown == true){
 			poisonLevelCountdown = false;
+			Save.setGlobalMessage ("You are poisoned!");
 			StartCoroutine(poisonLevelHandler());
 		}
 		if (Save.poisonImmune == false && Save.currentPoisonLevel == 1 && Save.poisonInitiate == true && poisonLevelCountdown == true){
+			Save.setGlobalMessage ("Your heart races as the poison travels through your veins..");
 			poisonLevelCountdown = false;
 			poisonLevelOne.gameObject.SetActive (true);
 			StartCoroutine(poisonLevelHandler());
 		}
 		if (Save.poisonImmune == false && Save.currentPoisonLevel == 2 && Save.poisonInitiate == true && poisonLevelCountdown == true){
+			Save.setGlobalMessage ("The poison is boiling you from the inside out..");
 			poisonLevelCountdown = false;
 			poisonLevelOne.gameObject.SetActive (false);
 			poisonLevelTwo.gameObject.SetActive (true);
 			StartCoroutine(poisonLevelHandler());
 		}
 		if (Save.poisonImmune == false && Save.currentPoisonLevel == 3 && Save.poisonInitiate == true && poisonLevelCountdown == true){
+			Save.setGlobalMessage ("Your heart cannot take the poison anymore.. it's about to burst.");
 			poisonLevelCountdown = false;
 			poisonLevelTwo.gameObject.SetActive (false);
 			poisonLevelThree.gameObject.SetActive (true);
@@ -156,14 +164,14 @@ public class EnvironmentalDamage : MonoBehaviour {
 	// Increase ice level with time, if nothing added to hearth
 	public IEnumerator iceLevelHandler(){
 		Debug.Log ("initiating ice handler countdown");
-		yield return new WaitForSeconds(10);
+		yield return new WaitForSeconds(20);
 		increaseIceLevel ();
 		iceLevelCountdown = true;
 	}
 	// Increase poison level with time, if not poison immune
 	public IEnumerator poisonLevelHandler(){
 		Debug.Log ("initiating poison handler countdown");
-		yield return new WaitForSeconds(10);
+		yield return new WaitForSeconds(20);
 		increasePoisonLevel ();
 		poisonLevelCountdown = true;
 	}

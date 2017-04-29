@@ -71,16 +71,22 @@ public class DoorScript : MonoBehaviour {
 	}
 	public static void unlockDoor(string doorName){
 		if (doorName == "diningRoomDoor" && Save.diningRoomDoorOpen == false){
+			Save.diningRoomDoorOpenSound = true;
 			openDoor ("diningRoomDoor");
 		}else if (doorName == "kitchenDoor" && Save.kitchenDoorOpen == false){
+			Save.kitchenDoorOpenSound = true;
 			openDoor ("kitchenDoor");
 		}else if (doorName == "hallwayBDoor" && Save.hallwayBDoorOpen == false){
+			Save.hallwayBDoorOpenSound = true;
 			openDoor ("hallwayBDoor");
 		}else if (doorName == "guestBedroomDoor" && Save.guestBedroomDoorOpen == false){
+			Save.guestBedroomDoorOpenSound = true;
 			openDoor ("guestBedroomDoor");
 		}else if (doorName == "masterBedroomDoor" && Save.masterBedroomDoorOpen == false){
+			Save.masterBedroomDoorOpenSound = true;
 			openDoor ("masterBedroomDoor");
 		}else if (doorName == "studyDoor" && Save.studyDoorOpen == false){
+			Save.studyDoorOpenSound = true;
 			openDoor ("studyDoor");
 		}
 	}

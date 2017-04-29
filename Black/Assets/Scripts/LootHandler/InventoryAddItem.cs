@@ -47,7 +47,7 @@ public class InventoryAddItem : MonoBehaviour {
 
     public static void passItemID(int pickupObjectID)
     {
-        Inventory.InventoryTest(pickupObjectID);
+        //Inventory.InventoryTest(pickupObjectID);
     }
 
 

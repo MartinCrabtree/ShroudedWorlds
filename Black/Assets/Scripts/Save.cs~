@@ -1,8 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Save : MonoBehaviour {
+	public static Text globalMessage;
+	public static bool globalMessageFlag = false;
+	public static bool globalMessageLongFlag = false;
+	public static Text topGlobalMessage;
+	public static bool topGlobalMessageFlag = false;
+	public static bool topGlobalMessageLongFlag = false;
 
 	public static bool gameOver = false;
 	public static List<Lore.LoreItem> lore = new List<Lore.LoreItem>();
@@ -36,4 +43,58 @@ public class Save : MonoBehaviour {
 
 	//Play Sounds
 	public static bool journalscribble = false;
+	public static bool diningRoomDoorOpenSound = false;
+	public static bool kitchenDoorOpenSound = false;
+	public static bool hallwayBDoorOpenSound = false;
+	public static bool guestBedroomDoorOpenSound = false;
+	public static bool masterBedroomDoorOpenSound = false;
+	public static bool studyDoorOpenSound = false;
+
+	void Awake(){
+		globalMessage = GameObject.Find ("/Canvas/Text/globalMessage").GetComponent<Text>();
+		topGlobalMessage = GameObject.Find ("/Canvas/Text/topGlobalMessage").GetComponent<Text>();
+	}
+	void Update(){
+		if (globalMessageFlag == true) {
+			StartCoroutine(FadeTextToZeroAlpha(5f, globalMessage));
+			globalMessageFlag = false;
+		}
+		if (topGlobalMessageFlag == true) {
+			StartCoroutine(FadeTextToZeroAlpha(5f, topGlobalMessage));
+			topGlobalMessageFlag = false;
+		}
+		if (globalMessageLongFlag == true) {
+			StartCoroutine(FadeTextToZeroAlpha(10f, topGlobalMessage));
+			globalMessageLongFlag = false;
+		}
+		if (topGlobalMessageLongFlag == true) {
+			StartCoroutine(FadeTextToZeroAlpha(10f, topGlobalMessage));
+			topGlobalMessageLongFlag = false;
+		}
+	}
+	public static void setGlobalMessage(string message){
+		globalMessage.text = message;
+		globalMessageFlag = true;
+	}
+	public static void setTopGlobalMessage(string message){
+		topGlobalMessage.text = message;
+		topGlobalMessageFlag = true;
+	}
+	public static void setTopGlobalMessageLong(string message){
+		topGlobalMessage.text = message;
+		topGlobalMessageFlag = true;
+	}
+	public static void setGlobalMessageLong(string message){
+		globalMessage.text = message;
+		globalMessageLongFlag = true;
+	}
+	public IEnumerator FadeTextToZeroAlpha(float t, Text i)
+	{
+		i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
+		while (i.color.a > 0.0f)
+		{
+			i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+			yield return null;
+		}
+	}
 }

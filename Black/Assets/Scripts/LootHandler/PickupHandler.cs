@@ -7,37 +7,31 @@ public class PickupHandler : MonoBehaviour {
 
     int slotID;
     public int itemID;
-    private Inventory inv;
     ItemDatabase database;
+
+    private Inventory inv;
+    
 
     void Start()
     {
-        inv = GameObject.Find("InventoryPanel").GetComponent<Inventory>();
         database = GetComponent<ItemDatabase>();
+
+        inv = GameObject.Find("InventoryPanel").GetComponent<Inventory>();
+
+        
     }
 
-    
-
-    // item dissapears when player collides
-    /*
-	void OnCollisionEnter()
-    {
-        this.GetComponent<SphereCollider>().enabled = false;
-        this.GetComponent<MeshRenderer>().enabled = false;
-    }
-    */
     
 
     void OnTriggerEnter(Collider other)
     {
-        ItemV2 itemToAdd = database.FetchItemByID(itemID);
 
-        inv.items.Add(itemToAdd);
+        inv.AddItem(itemID);
 
         this.GetComponent<SphereCollider>().enabled = false;
         this.GetComponent<MeshRenderer>().enabled = false;
 
-        //InventoryAddItem.passItemID(itemID);
+        
     }
 
 }

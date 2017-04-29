@@ -28,7 +28,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         // see if an item is already in the slot being dropped on
         if (inv.items[slotID].ID == -1)
         {
-            
+            Debug.Log("Attempting to drop an item in a null slot");
+
             inv.items[droppedItem.slotLocation] = new ItemV2();  // clear out previous item slot and set to null
             inv.items[slotID] = droppedItem.item;
 
