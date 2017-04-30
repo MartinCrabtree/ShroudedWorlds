@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
-    GameObject inventoryPanel;
-    GameObject slotPanel;
+    public GameObject inventoryPanel;
+    public GameObject slotPanel;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
     ItemDatabase database;
@@ -28,8 +28,8 @@ public class Inventory : MonoBehaviour {
 
         database = GetComponent<ItemDatabase>(); // used in AddItem()
 
-        inventoryPanel = GameObject.Find("InventoryPanel");
-        slotPanel = inventoryPanel.transform.FindChild("SlotPanel").gameObject;
+        //inventoryPanel = GameObject.Find("InventoryPanel");
+        //slotPanel = inventoryPanel.transform.FindChild("SlotPanel").gameObject;
         
         // create a blank slots
         for(int i = 0; i < slotAmount; i++)
@@ -106,7 +106,36 @@ public class Inventory : MonoBehaviour {
         
     }
 
-    
+
+    public void ResetItemList()
+    {
+        
+        for (int i = 0; i < items.Count; i++)
+        {
+            RemoveItem(i);
+            
+        }
+
+
+    }
+
+
+    public void RemoveItem(int slotID)
+    {
+        ItemV2 resetItem = new ItemV2();
+
+        items[slotID] = resetItem;
+        GameObject itemObj = Instantiate(inventoryItem);
+        itemObj.GetComponent<ItemData>().item = resetItem;
+        itemObj.GetComponent<ItemData>().slotLocation = slotID;  // location data for Drag/Drop
+        itemObj.transform.SetParent(slots[slotID].transform);
+        itemObj.transform.position = slots[slotID].transform.position;
+
+        itemObj.GetComponent<Image>().sprite = null;
+        itemObj.name = null;
+        
+
+    }
     
 
     bool CheckIfItemIsInInventory(ItemV2 item)

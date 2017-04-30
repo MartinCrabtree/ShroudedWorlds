@@ -126,11 +126,18 @@
     <Compile Include="Assets\Scripts\FadeAlpha.cs" />
     <Compile Include="Assets\Scripts\ImportantGameObjects\exitTeleporter.cs" />
     <Compile Include="Assets\Scripts\ImportantGameObjects\startTeleporter.cs" />
+    <Compile Include="Assets\Scripts\ImportantGameObjects\statueClickHandler.cs" />
     <Compile Include="Assets\Scripts\ImportantGameObjects\tollunGar.cs" />
+    <Compile Include="Assets\Scripts\LightSwitches\DiningRoomLightSwitch.cs" />
+    <Compile Include="Assets\Scripts\LightSwitches\HallwayALightSwitch.cs" />
+    <Compile Include="Assets\Scripts\LightSwitches\KitchenLightSwitch.cs" />
+    <Compile Include="Assets\Scripts\LightSwitches\StartRoomLightSwitch.cs" />
+    <Compile Include="Assets\Scripts\LightSwitches\StorageRoomLightSwitch.cs" />
     <Compile Include="Assets\Scripts\LightingScript.cs" />
     <Compile Include="Assets\Scripts\LootHandler\AllConditions.cs" />
     <Compile Include="Assets\Scripts\LootHandler\Condition.cs" />
     <Compile Include="Assets\Scripts\LootHandler\ConditionCollection.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\CraftingHandler.cs" />
     <Compile Include="Assets\Scripts\LootHandler\CraftingSlots.cs" />
     <Compile Include="Assets\Scripts\LootHandler\EditorWithSubEditors.cs" />
     <Compile Include="Assets\Scripts\LootHandler\Inventory.cs" />
@@ -163,6 +170,7 @@
     <Compile Include="Assets\_MK\_MKGlow\_Demo\Code\MK_DemoControl.cs" />
     <Compile Include="Assets\_MK\_MKGlow\_Demo\Code\MK_RotateObject.cs" />
     <Compile Include="Assets\_MK\_MKGlow\_Internal\MKGlow.cs" />
+    <Compile Include="Assets\test.cs" />
     <Compile Include="Assets\testscript.cs" />
   </ItemGroup>
   <ItemGroup>

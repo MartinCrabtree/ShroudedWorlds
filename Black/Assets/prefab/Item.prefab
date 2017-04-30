@@ -39,9 +39,9 @@ GameObject:
   - component: {fileID: 224148309459682388}
   - component: {fileID: 222298212819101224}
   - component: {fileID: 114914995900080310}
-  - component: {fileID: 114040294075100880}
   - component: {fileID: 114673481069552584}
   - component: {fileID: 225267867906852646}
+  - component: {fileID: 114033376838702524}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -49,7 +49,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114040294075100880
+--- !u!114 &114033376838702524
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576149264659522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be17e279059da8945b3ee82f7bfc9d77, type: 3}
+  m_Script: {fileID: 11500000, guid: 8991ee1c90f029042832614b0be51fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0

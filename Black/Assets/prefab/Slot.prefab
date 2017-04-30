@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224229454304045628}
   - component: {fileID: 222016641372444108}
   - component: {fileID: 114881416728511622}
-  - component: {fileID: 114973737611918020}
+  - component: {fileID: 114225868062871944}
   m_Layer: 0
   m_Name: Slot
   m_TagString: Untagged
@@ -29,6 +29,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114225868062871944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183227289793658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69fec2e5eba772e4abffe2a946852a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotID: 0
 --- !u!114 &114881416728511622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48,7 +60,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 455e7326c837fca41ba457de9a19ee25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 801c36495cdf6c843b63ce7fce565fba, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -56,18 +68,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114973737611918020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183227289793658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dae1e32b5d5ae3649b9f70b0e4af489f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotID: 0
 --- !u!222 &222016641372444108
 CanvasRenderer:
   m_ObjectHideFlags: 1

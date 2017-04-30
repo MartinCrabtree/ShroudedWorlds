@@ -14,6 +14,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public ItemV2 item;
     public int amount;
     public int slotLocation; // for drag/drop location
+    private Transform originalSlotLoc;
         
 
     private Inventory inv;
@@ -30,6 +31,9 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         // make sure there is an item in the slot
         if (item != null)
         {
+            // capture original location of slot transform
+            originalSlotLoc = this.transform;
+
             offset = eventData.position - new Vector2(this.transform.position.x, this.transform.position.y); // had to convert vector3 positioning
 
 
@@ -66,6 +70,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)  //// used after OnDrop in ItemSlot
     {
+        
         
 
         this.transform.SetParent(inv.slots[slotLocation].transform);  // sets parent to mouse location
