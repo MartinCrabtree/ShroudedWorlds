@@ -45,26 +45,32 @@ public class DoorScript : MonoBehaviour {
 	public static void openDoor(string doorName){
 		if (doorName == "diningRoomDoor"){
 			Debug.Log ("opening dining room door");
+			Save.setGlobalMessage ("You unlocked the door.");
 			diningRoomDoorLocked.gameObject.SetActive (false);
 			diningRoomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "kitchenDoor"){
 			Debug.Log ("opening kitchen door");
+			Save.setGlobalMessage ("You unlocked the door.");
 			kitchenDoorLocked.gameObject.SetActive (false);
 			kitchenDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "hallwayBDoor"){
 			Debug.Log ("opening hallway B door");
+			Save.setGlobalMessage ("You unlocked the door.");
 			hallwayBDoorLocked.gameObject.SetActive (false);
 			hallwayBDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "guestBedroomDoor"){
 			Debug.Log ("opening guest bedroom door");
+			Save.setGlobalMessage ("You unlocked the door.");
 			guestBedroomDoorLocked.gameObject.SetActive (false);
 			guestBedroomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "masterBedroomDoor"){
 			Debug.Log ("opening master bedroom door");
+			Save.setGlobalMessage ("You unlocked the door.");
 			masterBedroomDoorLocked.gameObject.SetActive (false);
 			masterBedroomDoorOpened.gameObject.SetActive (true);
 		}else if (doorName == "studyDoor"){
 			Debug.Log ("opening study door");
+			Save.setGlobalMessage ("You unlocked the door.");
 			studyDoorLocked.gameObject.SetActive (false);
 			studyDoorOpened.gameObject.SetActive (true);
 		}
