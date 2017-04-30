@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4434021111317074}
   m_Layer: 0
-  m_Name: fl_torch_med_orange
+  m_Name: light1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4157249607372906}
   m_Layer: 0
-  m_Name: fl_torch_med_orange
+  m_Name: light2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +561,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6ac6c9d22292fc145b97d5cdf07a7597, type: 2}
+  - {fileID: 2100000, guid: 545d397707e253f4190723e6979e6c79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -592,7 +592,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 470cc9557bcfd2544a3d520568324650, type: 2}
+  - {fileID: 2100000, guid: 7159fad62d9355f45b9f5e15c9a7ea48, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -879,3 +879,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03c6a079c827844795a4f267f33ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearthFirstTime: 1

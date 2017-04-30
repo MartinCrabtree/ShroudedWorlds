@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4171300221563724}
   - component: {fileID: 95516815322943030}
-  - component: {fileID: 114972264043196532}
   m_Layer: 0
   m_Name: TollunGar
   m_TagString: Untagged
@@ -698,6 +697,7 @@ GameObject:
   - component: {fileID: 4378569499567790}
   - component: {fileID: 137626305109513788}
   - component: {fileID: 65193072556026740}
+  - component: {fileID: 114095223992809928}
   m_Layer: 0
   m_Name: SM_Skeleton_Base
   m_TagString: Untagged
@@ -2057,17 +2057,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114972264043196532
+--- !u!114 &114095223992809928
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1013795591441512}
+  m_GameObject: {fileID: 1636604313049872}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01e1e8c97f878f94aa92baa87da467a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstTime: 1
+  exitTeleporter: {fileID: 0}
 --- !u!137 &137626305109513788
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -73,12 +73,15 @@ public class EnvironmentalDamage : MonoBehaviour {
 		}
 		if(Save.currentIceLevel == 1 && iceLevelCountdown == true){
 			Save.setGlobalMessage ("It's so cold in here..");
+			LightingScript.HearthFire.gameObject.SetActive (false);
+			Save.playIce = true;
 			iceLevelCountdown = false;
 			iceLevelOne.gameObject.SetActive (true);
 			StartCoroutine(iceLevelHandler());
 		}
 		if(Save.currentIceLevel == 2 && iceLevelCountdown == true){
 			Save.setGlobalMessage ("Frost gathers on your upper lip..");
+			Save.playIce = true;
 			iceLevelCountdown = false;
 			iceLevelOne.gameObject.SetActive (false);
 			iceLevelTwo.gameObject.SetActive (true);
@@ -86,6 +89,7 @@ public class EnvironmentalDamage : MonoBehaviour {
 		}
 		if (Save.currentIceLevel == 3 && iceLevelCountdown == true){
 			Save.setGlobalMessage ("You feel your body start to slow down..");
+			Save.playIce = true;
 			iceLevelCountdown = false;
 			iceLevelTwo.gameObject.SetActive (false);
 			iceLevelThree.gameObject.SetActive (true);
@@ -125,12 +129,14 @@ public class EnvironmentalDamage : MonoBehaviour {
 		}
 		if (Save.poisonImmune == false && Save.currentPoisonLevel == 1 && Save.poisonInitiate == true && poisonLevelCountdown == true){
 			Save.setGlobalMessage ("Your heart races as the poison travels through your veins..");
+			Save.playPoison = true;
 			poisonLevelCountdown = false;
 			poisonLevelOne.gameObject.SetActive (true);
 			StartCoroutine(poisonLevelHandler());
 		}
 		if (Save.poisonImmune == false && Save.currentPoisonLevel == 2 && Save.poisonInitiate == true && poisonLevelCountdown == true){
 			Save.setGlobalMessage ("The poison is boiling you from the inside out..");
+			Save.playPoison = true;
 			poisonLevelCountdown = false;
 			poisonLevelOne.gameObject.SetActive (false);
 			poisonLevelTwo.gameObject.SetActive (true);
@@ -138,6 +144,7 @@ public class EnvironmentalDamage : MonoBehaviour {
 		}
 		if (Save.poisonImmune == false && Save.currentPoisonLevel == 3 && Save.poisonInitiate == true && poisonLevelCountdown == true){
 			Save.setGlobalMessage ("Your heart cannot take the poison anymore.. it's about to burst.");
+			Save.playPoison = true;
 			poisonLevelCountdown = false;
 			poisonLevelTwo.gameObject.SetActive (false);
 			poisonLevelThree.gameObject.SetActive (true);

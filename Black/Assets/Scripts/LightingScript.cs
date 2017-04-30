@@ -12,6 +12,12 @@ public class LightingScript : MonoBehaviour {
 	public static GameObject EastWingLights; // Rest of the lights on the east wing
 	public static GameObject HearthFire;
 	public static GameObject PlayerLight;
+	public static GameObject HallwayALightSwitch;
+	public static GameObject StorageRoomLightSwitch;
+	public static GameObject DiningRoomLightSwitch;
+	public static GameObject KitchenLightSwitch;
+	public static GameObject StartingRoomLightSwitch;
+
 
 	void Awake (){
 		HallwayALights = GameObject.Find ("/Canvas/RoomLights/HallwayALights");
@@ -22,6 +28,12 @@ public class LightingScript : MonoBehaviour {
 		EastWingLights = GameObject.Find ("/LIGHTS");
 		HearthFire = GameObject.Find ("/Canvas/Hearth/firewood");
 		PlayerLight = GameObject.Find ("/player camera/player/lightsource");
+
+		HallwayALightSwitch = GameObject.Find ("/Canvas/RoomLights/LightSwitch - HallwayA");
+		StorageRoomLightSwitch = GameObject.Find ("/Canvas/RoomLights/LightSwitch - StorageRoom");
+		DiningRoomLightSwitch = GameObject.Find ("/Canvas/RoomLights/LightSwitch - DiningRoom");
+		KitchenLightSwitch = GameObject.Find ("/Canvas/RoomLights/LightSwitch - Kitchen");
+		StartingRoomLightSwitch = GameObject.Find ("/Canvas/RoomLights/LightSwitch - StartRoom");
 	}
 	// Use this for initialization
 	void Start () {
@@ -37,26 +49,36 @@ public class LightingScript : MonoBehaviour {
 	// Enables the room lights for said rooms
 	public static void lightRoom (string roomName){
 		if (roomName == "HallwayA") {
-			Debug.Log ("lighting Hallway A");
 			HallwayALights.gameObject.SetActive (true);
 		} else if (roomName == "StorageRoom") {
-			Debug.Log ("lighting Storage Room");
 			StorageRoomLights.gameObject.SetActive (true);
 		} else if (roomName == "DiningRoom") {
-			Debug.Log ("lighting Dining Room");
 			DiningRoomLights.gameObject.SetActive (true);
 		} else if (roomName == "Kitchen") {
-			Debug.Log ("lighting Kitchen");
 			KitchenLights.gameObject.SetActive (true);
 		} else if (roomName == "StartingRoom") {
-			Debug.Log ("lighting Starting Room");
 			StartingRoomLights.gameObject.SetActive (true);
+		}
+	}
+	// Disables the room lights for said rooms
+	public static void unLightRoom (string roomName){
+		if (roomName == "HallwayA") {
+			HallwayALights.gameObject.SetActive (false);
+		} else if (roomName == "StorageRoom") {
+			StorageRoomLights.gameObject.SetActive (false);
+		} else if (roomName == "DiningRoom") {
+			DiningRoomLights.gameObject.SetActive (false);
+		} else if (roomName == "Kitchen") {
+			KitchenLights.gameObject.SetActive (false);
+		} else if (roomName == "StartingRoom") {
+			StartingRoomLights.gameObject.SetActive (false);
 		}
 	}
 	// Sets the hearth to be burning or not
 	public static void lightHearth (bool truefalse){
 		if (truefalse == true){
 			HearthFire.gameObject.SetActive (true);
+			Save.icetesting = true;
 		} else if (truefalse == false){
 			HearthFire.gameObject.SetActive (false);
 		}

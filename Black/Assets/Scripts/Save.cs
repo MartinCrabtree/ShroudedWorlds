@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Save : MonoBehaviour {
+	public static GameObject endingBlackscreen;
+	public static GameObject playerTeleporterAnimation;
 	public static Text globalMessage;
 	public static bool globalMessageFlag = false;
 	public static bool globalMessageLongFlag = false;
@@ -42,6 +44,8 @@ public class Save : MonoBehaviour {
 	public static bool icetesting = false;
 
 	//Play Sounds
+	public static bool playFootsteps = false;
+	public static bool stopFootsteps = false;
 	public static bool journalscribble = false;
 	public static bool diningRoomDoorOpenSound = false;
 	public static bool kitchenDoorOpenSound = false;
@@ -49,10 +53,30 @@ public class Save : MonoBehaviour {
 	public static bool guestBedroomDoorOpenSound = false;
 	public static bool masterBedroomDoorOpenSound = false;
 	public static bool studyDoorOpenSound = false;
+	public static bool teleportSound = false;
+	public static bool playIce = false;
+	public static bool playPoison = false;
+	  // Lore audio
+	public static bool playLore1 = false;
+	public static bool playLore2 = false;
+	public static bool playLore3 = false;
+	public static bool playLore4 = false;
+	public static bool playLore5 = false;
+	public static bool playLore6 = false;
+	public static bool playLore7 = false;
+	public static bool playLore8 = false;
+	public static bool stopLore = false;
 
 	void Awake(){
 		globalMessage = GameObject.Find ("/Canvas/Text/globalMessage").GetComponent<Text>();
 		topGlobalMessage = GameObject.Find ("/Canvas/Text/topGlobalMessage").GetComponent<Text>();
+		endingBlackscreen = GameObject.Find ("/Canvas/EndingBlackscreen");
+		playerTeleporterAnimation = GameObject.Find ("/player camera/player/teleporter");
+		endingBlackscreen.gameObject.SetActive (false);
+		playerTeleporterAnimation.gameObject.SetActive (false);
+
+		// Start freezing conditions
+		icetesting = true;
 	}
 	void Update(){
 		if (globalMessageFlag == true) {

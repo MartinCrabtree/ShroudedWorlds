@@ -5,6 +5,12 @@ using UnityEngine;
 public class GuestBedroom : MonoBehaviour {
 
 	void OnMouseDown(){
-		DoorScript.unlockDoor ("guestBedroomDoor");
+		/*
+		if(){
+			DoorScript.unlockDoor ("guestBedroomDoor");
+		}else{
+			Save.setTopGlobalMessageLong("I do not have the means to unlock this door.");
+		}
+		*/
 	}
 }

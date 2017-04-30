@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Lore : MonoBehaviour {
+	public static Button loreAudioButton;
+	public static GameObject loreAudioPanel;
+	public static Text loreAudioText;
 	
 	public class LoreItem{
 		public string loreText;
@@ -20,6 +23,12 @@ public class Lore : MonoBehaviour {
 		}
 	}
 	void Awake(){
+		loreAudioPanel = GameObject.Find ("/Canvas/LoreAudio");
+		loreAudioButton = GameObject.Find ("/Canvas/LoreAudio/Button").GetComponent<Button>();
+		loreAudioText = GameObject.Find ("/Canvas/LoreAudio/Text").GetComponent<Text>(); 
+		loreAudioPanel.gameObject.SetActive (false);
+		loreAudioButton.onClick.AddListener (stopLore);
+
 		//FREDRIK Create
 		Save.lore.Add(new LoreItem("The truth is I never truly saw other humans as peers, even less as equals. For my unrivalled magical prowess I was awarded envy, fear, and reverence, all in equal measure. I was only truly hated for my intellect, and the success it brought me. My generosity counted for little, in spite of the countless boons I awarded my fellow humans. I only ever intended to leave the world a better place than I found it. In order to achieve that, I did what no one else could have done. I sought and found power that surpassed even that of the gods! The pride I felt... as I gave that power to my kind, as I elevated them. \n\nWhat a fool I was.\n\nMy name is Tollun'Gar, and I am the man who set the world on fire.", "page1"));
 		Save.lore.Add(new LoreItem("We created such wonders! With our newfound power we ushered in a new age, a renaissance of magical innovation! Cultural variety blossomed and boomed, as we found a way to connect faraway places through a system of portals. With travel instantaneous we were worshipped, at least at first. Small wonder, as we brought an end to hunger and crushed all instigators of violence. Surprisingly, war lost its appeal once everyone had plenty to eat.\nAh, the cities we built once we bonded together like never before in human history! The art we created, and the food we enjoyed! Wine, music, dance, and theatre! We wanted to live forever…\n\nand that is when the Reaping began. We returned to our former brutality with renewed bloodlust. Many had to die so that the few could live, so that we could cheat death long enough to escape her clutches forever.", "page2"));
@@ -29,22 +38,52 @@ public class Lore : MonoBehaviour {
 		Save.lore.Add(new LoreItem("I have counted two-hundred days since I entered seclusion. I failed the task I set out to achieve. This sensation is perturbing, I never knew failure could be so haunting. The portals are no more, I managed to dismantle two of them but the other thirty-nine… the world will never be the same. When I first created the portals Alia Tentras warned me what could happen. She knew how unstable that kind of magic could be. I can still hear her voice, or perhaps the voice is my own, or perhaps I am going insane in my isolation. Perhaps this curse is actually a blessing… I cannot be hated for my legacy, the loss of life, and the destruction my creations have wrought, if there is no one left that remembers. Ah, this morbid relief perplexes me! Even if they survived the explosions, they will not survive the aftermath.", "page6"));
 		Save.lore.Add(new LoreItem("Alia Tentras was a phenomenal mage, truly. Out of the many, it was only she who could comprehend the full extent of my genius. My greatest sin was not that I ignored the many warnings she gave me along the way toward ruin. I cannot count how many times she told me what my ambition would mean for the world. No, my greatest sin... I would do it all over again. No price was too high, no price would ever be too high, except the one we are currently paying.\n\nThe fault lies not with me! Humans are corrupt by their very nature! They could not handle the gift I bestowed upon them. THEY brought the world to its knees, not I!", "page7"));
 		Save.lore.Add(new LoreItem("If there, against all, odds is a world for my legacy to survive into, I would offer a few words for posterity. I will never apologize for what I did, even in hindsight. The things I did, and everything I built... it had to be me! Anyone else would have gotten it wrong. Throughout the millennium of my existence I have learned but one humbling lesson. The world will always strive toward equilibrium, and when you break it the retribution is swift and brutal. I write these words knowing my final moment draws near. I have not eaten in four days and I am running out of water.\n\nPerhaps there is a lesson to be learned in my passing, but if there is I do not see it. I would never have guessed that the great Tollun'Gar would meet such an end. Why did I forget the cursed key and the activation sequence in the library? I have tried everything I can think of aside from blasting my way out to the surface through the mountain bedrock. I would rather starve to death than have my insides boiled by volatile magic.\n\nWell, at least the trap maker lived up to his reputation. I only hire the best.", "page8"));
-	}
-	// Use this for initialization
-	void Start () {}
-	// Update is called once per frame
-	void Update () {}
 
+	}
 	public static void loreUpdate(string name){
 		foreach (Lore.LoreItem item in Save.lore) {
 			if(item.loreName == name){
 				item.locked = false;
 				//Play scribble sound
 				Save.journalscribble = true;
+				//Play lore entry by lore
+				playLore(name);
 				Debug.Log (item.loreName + " locked status is now " + item.locked);
 			}
 			Debug.Log (item.loreName + " locked status is now " + item.locked);
 		}
 //		Debug.Log ("Save.JournalScribble is: " + Save.journalscribble);
+	}
+	public static void playLore (string name){
+		loreAudioPanel.gameObject.SetActive (true);
+		if (name == "page1") {
+			loreAudioText.text = "Lore Page 1 Playing";
+			Save.playLore1 = true;
+		} else if (name == "page2") {
+			loreAudioText.text = "Lore Page 2 Playing";
+			Save.playLore2 = true;
+		} else if (name == "page3") {
+			loreAudioText.text = "Lore Page 3 Playing";
+			Save.playLore3 = true;
+		} else if (name == "page4") {
+			loreAudioText.text = "Lore Page 4 Playing";
+			Save.playLore4 = true;
+		} else if (name == "page5") {
+			loreAudioText.text = "Lore Page 5 Playing";
+			Save.playLore5 = true;
+		} else if (name == "page6") {
+			loreAudioText.text = "Lore Page 6 Playing";
+			Save.playLore6 = true;
+		} else if (name == "page7") {
+			loreAudioText.text = "Lore Page 7 Playing";
+			Save.playLore7 = true;
+		} else if (name == "page8") {
+			loreAudioText.text = "Lore Page 8 Playing";
+			Save.playLore8 = true;
+		}
+	}
+	public static void stopLore (){
+		loreAudioPanel.gameObject.SetActive (false);
+		Save.stopLore = true;
 	}
 }

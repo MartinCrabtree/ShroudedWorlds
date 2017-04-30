@@ -15,7 +15,8 @@ public class tollunGar : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		if (firstTime == true) {
-			Save.setGlobalMessageLong ("Being forgotten is more than this wretch deserved. Still… what a way to die. I suppose everyone gets their Karmic reward, one way or another.");
+			Save.setTopGlobalMessageLong ("Being forgotten is more than this wretch deserved. Still… what a way to die. I suppose everyone gets their Karmic reward, one way or another.");
+			Journal.openJournal ();
 			firstTime = false;
 			StartCoroutine (coroutineOne (5));
 		}
