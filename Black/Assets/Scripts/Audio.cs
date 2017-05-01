@@ -36,8 +36,8 @@ public class Audio : MonoBehaviour {
 
 		//Lore audio
 		audioClips.Add(new AudioObject("lore1", "lore1"));
+		audioClips.Add(new AudioObject("lore2", "lore1"));
 		/*
-		audioClips.Add(new AudioObject("lore2", "lore2"));
 		audioClips.Add(new AudioObject("lore3", "lore3"));
 		audioClips.Add(new AudioObject("lore4", "lore4"));
 		audioClips.Add(new AudioObject("lore5", "lore5"));

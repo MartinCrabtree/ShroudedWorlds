@@ -101,6 +101,7 @@ public class HearthClickHandler : MonoBehaviour {
     {
         if (invWindow.CheckByID(17) && lanternLightFirstTime == true)
         {
+			Save.setGlobalMessage ("I lit the lantern at the hearth.");	
             GetItemSlotID(17);
             invWindow.RemoveItem(itemSlotID);
             invWindow.AddItem(6);
