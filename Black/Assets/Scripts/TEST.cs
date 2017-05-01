@@ -21,39 +21,39 @@ public class TEST : MonoBehaviour {
 	public Button lightStartingRoom;
 
 	void Awake (){
-		poisonstart = GameObject.Find ("/Canvas/TemporaryTestingButtons/poisonstart").GetComponent<Button>();
-		poisonimmune = GameObject.Find ("/Canvas/TemporaryTestingButtons/poisonimmune").GetComponent<Button>();
-		feedhearth = GameObject.Find ("/Canvas/TemporaryTestingButtons/feedhearth").GetComponent<Button>();
-		diningRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/diningRoom").GetComponent<Button>();
-		kitchen = GameObject.Find ("/Canvas/TemporaryTestingButtons/kitchen").GetComponent<Button>();
-		rempoisonimmune = GameObject.Find ("/Canvas/TemporaryTestingButtons/rempoisonimmune").GetComponent<Button>();
-		hallwayB = GameObject.Find ("/Canvas/TemporaryTestingButtons/hallwayB").GetComponent<Button>();
-		guestBedroom = GameObject.Find ("/Canvas/TemporaryTestingButtons/guestBedroom").GetComponent<Button>();
-		masterBedroom = GameObject.Find ("/Canvas/TemporaryTestingButtons/masterBedroom").GetComponent<Button>();
+//		poisonstart = GameObject.Find ("/Canvas/TemporaryTestingButtons/poisonstart").GetComponent<Button>();
+//		poisonimmune = GameObject.Find ("/Canvas/TemporaryTestingButtons/poisonimmune").GetComponent<Button>();
+//		feedhearth = GameObject.Find ("/Canvas/TemporaryTestingButtons/feedhearth").GetComponent<Button>();
+//		diningRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/diningRoom").GetComponent<Button>();
+//		kitchen = GameObject.Find ("/Canvas/TemporaryTestingButtons/kitchen").GetComponent<Button>();
+//		rempoisonimmune = GameObject.Find ("/Canvas/TemporaryTestingButtons/rempoisonimmune").GetComponent<Button>();
+//		hallwayB = GameObject.Find ("/Canvas/TemporaryTestingButtons/hallwayB").GetComponent<Button>();
+//		guestBedroom = GameObject.Find ("/Canvas/TemporaryTestingButtons/guestBedroom").GetComponent<Button>();
+//		masterBedroom = GameObject.Find ("/Canvas/TemporaryTestingButtons/masterBedroom").GetComponent<Button>();
 		study = GameObject.Find ("/Canvas/TemporaryTestingButtons/study").GetComponent<Button>();
-		lightHallwayA = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightHallwayA").GetComponent<Button>();
-		lightStorageRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightStorageRoom").GetComponent<Button>();
-		lightDiningRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightDiningRoom").GetComponent<Button>();
-		lightKitchen = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightKitchen").GetComponent<Button>();
-		lightStartingRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightStartingRoom").GetComponent<Button>();
+//		lightHallwayA = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightHallwayA").GetComponent<Button>();
+//		lightStorageRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightStorageRoom").GetComponent<Button>();
+//		lightDiningRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightDiningRoom").GetComponent<Button>();
+//		lightKitchen = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightKitchen").GetComponent<Button>();
+//		lightStartingRoom = GameObject.Find ("/Canvas/TemporaryTestingButtons/lightStartingRoom").GetComponent<Button>();
 	}
 	// Use this for initialization
 	void Start () {
-		poisonstart.onClick.AddListener (poisonstart1);
-		poisonimmune.onClick.AddListener (poisonimmune1);
-		feedhearth.onClick.AddListener (feedhearth1);
-		diningRoom.onClick.AddListener (diningRoom1);
-		kitchen.onClick.AddListener (kitchen1);
-		rempoisonimmune.onClick.AddListener (rempoisonimmune1);
-		hallwayB.onClick.AddListener (hallwayB1);
-		guestBedroom.onClick.AddListener (guestBedroom1);
-		masterBedroom.onClick.AddListener (masterBedroom1);
+//		poisonstart.onClick.AddListener (poisonstart1);
+//		poisonimmune.onClick.AddListener (poisonimmune1);
+//		feedhearth.onClick.AddListener (feedhearth1);
+//		diningRoom.onClick.AddListener (diningRoom1);
+//		kitchen.onClick.AddListener (kitchen1);
+//		rempoisonimmune.onClick.AddListener (rempoisonimmune1);
+//		hallwayB.onClick.AddListener (hallwayB1);
+//		guestBedroom.onClick.AddListener (guestBedroom1);
+//		masterBedroom.onClick.AddListener (masterBedroom1);
 		study.onClick.AddListener (study1);
-		lightHallwayA.onClick.AddListener (lightHallwayA1);
-		lightStorageRoom.onClick.AddListener (lightStorageRoom1);
-		lightDiningRoom.onClick.AddListener (lightDiningRoom1);
-		lightKitchen.onClick.AddListener (lightKitchen1);
-		lightStartingRoom.onClick.AddListener (lightStartingRoom1);
+//		lightHallwayA.onClick.AddListener (lightHallwayA1);
+//		lightStorageRoom.onClick.AddListener (lightStorageRoom1);
+//		lightDiningRoom.onClick.AddListener (lightDiningRoom1);
+//		lightKitchen.onClick.AddListener (lightKitchen1);
+//		lightStartingRoom.onClick.AddListener (lightStartingRoom1);
 	}
 	
 	// Update is called once per frame

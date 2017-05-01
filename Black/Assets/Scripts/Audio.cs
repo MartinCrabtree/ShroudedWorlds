@@ -10,6 +10,7 @@ public class Audio : MonoBehaviour {
 	public AudioSource audioSourceFootsteps;
 	public AudioSource audioSourceOne;
 	public AudioSource audioSourceTwo;
+	public AudioSource audioSourceThree;
 	// These are used in helper functions, specified here to be within scope of return in those functions
 	public AudioClip clip;
 
@@ -35,16 +36,14 @@ public class Audio : MonoBehaviour {
 		audioClips.Add(new AudioObject("Ice", "Ice"));
 
 		//Lore audio
-		audioClips.Add(new AudioObject("lore1", "lore1"));
-		audioClips.Add(new AudioObject("lore2", "lore1"));
-		/*
-		audioClips.Add(new AudioObject("lore3", "lore3"));
-		audioClips.Add(new AudioObject("lore4", "lore4"));
-		audioClips.Add(new AudioObject("lore5", "lore5"));
-		audioClips.Add(new AudioObject("lore6", "lore6"));
-		audioClips.Add(new AudioObject("lore7", "lore7"));
-		audioClips.Add(new AudioObject("lore8", "lore8"));
-		*/
+		audioClips.Add(new AudioObject("lore1", "Lore_Page_1"));
+		audioClips.Add(new AudioObject("lore2", "Lore_Page_2"));
+		audioClips.Add(new AudioObject("lore3", "Lore_Page_3"));
+		audioClips.Add(new AudioObject("lore4", "Lore_Page_4"));
+		audioClips.Add(new AudioObject("lore5", "Lore_Page_5"));
+		audioClips.Add(new AudioObject("lore6", "Lore_Page_6"));
+		audioClips.Add(new AudioObject("lore7", "Lore_Page_7"));
+		audioClips.Add(new AudioObject("lore8", "Lore_Page_8"));
 	}
 	// Called before the first frame update
 	void Start () {
@@ -55,6 +54,11 @@ public class Audio : MonoBehaviour {
 	}
 	// Called once per frame
 	void Update () {
+		/*
+		if(audioSourceThree.isPlaying != true){
+			Lore.loreAudioPanel.gameObject.SetActive (false);	
+		}
+		*/
 		// Auto play based on boolean
 		if(Save.playPoison == true){
 			PlaySoundTwo ("HeartBeat");
@@ -105,39 +109,41 @@ public class Audio : MonoBehaviour {
 			Save.teleportSound = false;
 		}
 		if(Save.playLore1 == true){
-			PlaySoundTwo ("lore1");
+			PlaySoundThree ("lore1");
 			Save.playLore1 = false;
 		}
 		if(Save.playLore2 == true){
-			PlaySoundTwo ("lore2");
+//			Lore.loreAudioPanel.gameObject.SetActive (false);
+			PlaySoundThree ("lore2");
 			Save.playLore2 = false;
 		}
 		if(Save.playLore3 == true){
-			PlaySoundTwo ("lore3");
+//			Lore.loreAudioPanel.gameObject.SetActive (false);
+			PlaySoundThree ("lore3");
 			Save.playLore3 = false;
 		}
 		if(Save.playLore4 == true){
-			PlaySoundTwo ("lore4");
+			PlaySoundThree ("lore4");
 			Save.playLore4 = false;
 		}
 		if(Save.playLore5 == true){
-			PlaySoundTwo ("lore5");
+			PlaySoundThree ("lore5");
 			Save.playLore5 = false;
 		}
 		if(Save.playLore6 == true){
-			PlaySoundTwo ("lore6");
+			PlaySoundThree ("lore6");
 			Save.playLore6 = false;
 		}
 		if(Save.playLore7 == true){
-			PlaySoundTwo ("lore7");
+			PlaySoundThree ("lore7");
 			Save.playLore7 = false;
 		}
 		if(Save.playLore8 == true){
-			PlaySoundTwo ("lore8");
+			PlaySoundThree ("lore8");
 			Save.playLore8 = false;
 		}
 		if(Save.stopLore == true){
-			audioSourceTwo.Stop ();
+			audioSourceThree.Stop ();
 			Save.stopLore = false;
 		}
 	}
@@ -173,18 +179,31 @@ public class Audio : MonoBehaviour {
 		audioSourceFootsteps.clip = getAudioClip("runsteps");
 		audioSourceFootsteps.Play ();
 	}
-	// Used for Lore playback
+
 	public void PlaySoundTwo(string name){
 		foreach (AudioObject item in audioClips) {
 			if(item.clipName == name){
 				audioSourceTwo.clip = item.audioClip;
+				audioSourceTwo.Play ();
+			}
+		}
+	}
+	// Used for Lore playback
+	public void PlaySoundThree(string name){
+		foreach (AudioObject item in audioClips) {
+			if(item.clipName == name){
+				audioSourceThree.clip = item.audioClip;
 				StartCoroutine (loreCoroutine());
 			}
 		}
 	}
 	public IEnumerator loreCoroutine(){
-		audioSourceTwo.Play ();
-		yield return new WaitForSeconds (getAudioClip (audioSourceTwo.clip.name).length + 1);
+		audioSourceThree.Play ();
+		yield return new WaitForSeconds (getAudioClip (audioSourceThree.clip.name).length + 1);
+/*
+		if(audioSourceThree.isPlaying != true){
+			Lore.loreAudioPanel.gameObject.SetActive (false);	
+		}*/
 		Lore.loreAudioPanel.gameObject.SetActive (false);
 	}
 }
