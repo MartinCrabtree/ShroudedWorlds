@@ -149,6 +149,7 @@
     <Compile Include="Assets\Scripts\LootHandler\ItemData.cs" />
     <Compile Include="Assets\Scripts\LootHandler\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\LootHandler\ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\LootHandler\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\LootHandler\PickupHandler.cs" />
     <Compile Include="Assets\Scripts\Lore Objects\page1.cs" />
     <Compile Include="Assets\Scripts\Lore Objects\page2.cs" />

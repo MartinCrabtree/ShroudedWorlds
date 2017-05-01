@@ -13,12 +13,17 @@ public class ItemDatabase : MonoBehaviour {
     private List<ItemV2> database = new List<ItemV2>();
     private JsonData itemData;
 
-    void Start()
+    void Awake()
     {
         // pull data from json file in assets folder
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
 
         ConstructItemDatabase();
+    }
+
+    void Start()
+    {
+        
 
         //Debug.Log("Test output for itemDatabase " + database[1].Title);
     }

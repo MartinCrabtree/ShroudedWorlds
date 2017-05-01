@@ -171,14 +171,14 @@ public class EnvironmentalDamage : MonoBehaviour {
 	// Increase ice level with time, if nothing added to hearth
 	public IEnumerator iceLevelHandler(){
 		Debug.Log ("initiating ice handler countdown");
-		yield return new WaitForSeconds(20);
+		yield return new WaitForSeconds(30);
 		increaseIceLevel ();
 		iceLevelCountdown = true;
 	}
 	// Increase poison level with time, if not poison immune
 	public IEnumerator poisonLevelHandler(){
 		Debug.Log ("initiating poison handler countdown");
-		yield return new WaitForSeconds(20);
+		yield return new WaitForSeconds(30);
 		increasePoisonLevel ();
 		poisonLevelCountdown = true;
 	}

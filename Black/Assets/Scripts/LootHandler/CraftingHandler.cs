@@ -28,8 +28,18 @@ public class CraftingHandler : MonoBehaviour {
 
         craftSlotID = new int[3];
 
-        // for testing
-        //invWindow.AddItem(4);
+        
+        // invWindow.AddItem(7);
+        // invWindow.AddItem(5);
+
+
+
+
+
+    }
+
+    public void CraftingCheck()
+    {
 
         // lit lantern  = candle + unlit lantern (at hearth)
         // poison invuln = flask + herb
@@ -37,17 +47,6 @@ public class CraftingHandler : MonoBehaviour {
         // lava mushroom = tong + tenderizer @ statue
 
 
-
-        AddToCraftingWindow(1);
-        AddToCraftingWindow(2);
-
-        //CraftingCheck();
-
-
-    }
-
-    public void CraftingCheck()
-    {
         // grab IDs for each crafting slot
         for (int i = 0; i < 3; i++)
         {
@@ -63,56 +62,89 @@ public class CraftingHandler : MonoBehaviour {
             {
                 if(craftSlotID[0] == 2 || craftSlotID[1] == 2 || craftSlotID[2] == 2)
                 {
-                    Save.setGlobalMessageLong("You craft a potion of poison immunity. After you quaff it, you no longer feel the effects of poison.");
+                    Save.setGlobalMessage("You craft a potion of poison immunity. After you quaff it, you no longer feel the effects of poison.");
                     Save.poisonImmune = true;
                     ClearCraftingSlots();
                 }
             }
-            break;
+            
         }
 
-        // craft lit lantern
+        // craft lantern with candle (candle + empty lantern)
+        for (int i = 0; i < 3; i++)
+        {
+            if (craftSlotID[i] == 7)  // check for candle
+            {
+                if (craftSlotID[0] == 5 || craftSlotID[1] == 5 || craftSlotID[2] == 5) // check for lantern unlit
+                {
+                    // need additional check for hearth proximity
+                    CraftItem(17);
+                    Save.setGlobalMessage("You have crafted a lantern with a candle inside.");
+                    ClearCraftingSlots();
+                }
+            }
+            
+        }
 
-        
+        // key to study = blank scroll + silver key + lava mushroom
+        for (int i = 0; i < 3; i++)
+        {
+            if (craftSlotID[i] == 13)  // blank scroll
+            {
+                if (craftSlotID[0] == 0 || craftSlotID[1] == 0 || craftSlotID[2] == 0) // silver key
+                {
+                    if (craftSlotID[0] == 14 || craftSlotID[1] == 14 || craftSlotID[2] == 14) // lava mushroom
+                    {
+                        CraftItem(15); // craft key to the study
+                        Save.setGlobalMessage("You have crafted a key to the study.");
+                        ClearCraftingSlots();
+                    }
+                }
+            }
+            
+        }
 
+        // lava mushroom = tong + tenderizer @ statue
+        for (int i = 0; i < 3; i++)
+        {
+            if (craftSlotID[i] == 9)  // check for tenderizer
+            {
+                if (craftSlotID[0] == 11 || craftSlotID[1] == 11 || craftSlotID[2] == 11) // tongs
+                {
+                    // need additional check for statue proximity
+                    CraftItem(14); // craft lava mushroom
+                    ClearCraftingSlots();
+                }
+            }
+
+        }
 
 
     }
 
+
+
+    //
+    //
     public void CraftItem(int itemID)
     {
         invWindow.AddItem(itemID);
     }
 
+    //
+    //
     public void AddToCraftingWindow(int itemID)
     {
         craftWindow.AddItem(itemID);
     }
 
+    //
     // set all slots in crafting window to null
     public void ClearCraftingSlots()
     {
 
         craftWindow.ResetItemList();
-        /*
-        for (int i = 0; i < 3; i++)
-        {
-            
-            craftWindow.items[i] = ItemV2();
-            
-            
-
-        }
-
-        for (int i = 0; i < 3; i++)
-        {
-            Debug.Log("craft item ID " + craftWindow.items[i].ID);
-
-        }
-
-        return;
-
-    */
+        
         
     }
 	

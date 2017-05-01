@@ -1,12 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CraftingStationClickHandler : MonoBehaviour {
 
+    public GameObject craftingStation;
+    public Button closeCraftingStation;
+    public static bool stationIsActive = false;
+    public static Inventory craftingGUI;
+
+    void Awake()
+    {
+        craftingGUI = GameObject.Find("CraftingGUI").GetComponent<Inventory>();
+
+    }
+
+    void Start()
+    {
+        craftingStation = GameObject.Find("Craftstation");
+        closeCraftingStation = GameObject.Find("closeCraftButton").GetComponent<Button>();
+
+
+        craftingStation.gameObject.SetActive(false);
+        closeCraftingStation.onClick.AddListener(CloseCraftingWindow);
+    }
+
 	void OnMouseDown(){
-		// MARTIN TO UPDATE THIS - Martin you will need to call some static script from your Crafting Station script. You'll also need in your Crafting Station script
-		// to find the crafting station panel that's already in UILockPanel and enable it when it's clicked, along with any other scripts. Also need to create
-		// a button handler script to handle closing the crafting station with the "close button" in canvas under the crafting station
-	}
+
+        craftingStation.gameObject.SetActive(true);
+        stationIsActive = true;
+
+    }
+
+    public void CloseCraftingWindow()
+    {
+        craftingStation.gameObject.SetActive(false);
+        stationIsActive = false;
+    }
+
+    
 }

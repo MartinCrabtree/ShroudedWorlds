@@ -88,7 +88,7 @@ public class Save : MonoBehaviour {
 			topGlobalMessageFlag = false;
 		}
 		if (globalMessageLongFlag == true) {
-			StartCoroutine(FadeTextToZeroAlpha(10f, topGlobalMessage));
+			StartCoroutine(FadeTextToZeroAlpha(10f, globalMessage));
 			globalMessageLongFlag = false;
 		}
 		if (topGlobalMessageLongFlag == true) {

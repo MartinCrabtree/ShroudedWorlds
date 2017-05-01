@@ -7,39 +7,108 @@ public class HearthClickHandler : MonoBehaviour {
 	public bool messageFirstTime = true;
 	public bool lanternLightFirstTime = true;
 
+    private Inventory invWindow;
+    private Inventory craftWindow;
+    ItemDatabase database;
+
+    private int itemSlotID;
+
+    void Start()
+    {
+        database = GetComponent<ItemDatabase>();
+
+        invWindow = GameObject.Find("InventoryPanel").GetComponent<Inventory>();
+        craftWindow = GameObject.Find("CraftingGUI").GetComponent<Inventory>();
+    }
+
 	// MARTIN TO UPDATE THIS
 	void OnMouseDown(){
-		// First use of hearth, have this message pop up
+		
 
-		/*
+
+		
 		if (hearthFirstTime == true) {
-			Save.setGlobalMessageLong ("I might be able to use this to stay warm.");
+			Save.setGlobalMessage ("I might be able to use this to stay warm.");
 			hearthFirstTime = false;
-		} else {
-			if(&& Save.CurrentIceLevel > 0){
+            LightLantern();
+		}
+        else
+        {
+			if(invWindow.CheckByID(16) && Save.currentIceLevel > 0){
+                GetItemSlotID(16);
+
 				if(messageFirstTime == true){
+                    
+
 					Save.setTopGlobalMessageLong ("Burning books is so 1930. Even though it feels wrong, it will keep me warm.");
+                    Debug.Log("Grace EATS poop");
+                    invWindow.UseStackedItem(itemSlotID);
 					messageFirstTime = false;
 				}else{
-					Save.setTopGlobalMessageLong ("You feed a book to the hearth and feel warmer.");					
-				}
+					Save.setTopGlobalMessage ("You feed a book to the hearth and feel warmer.");
+                    Debug.Log("Grace EATS MORE poop");
+                    invWindow.UseStackedItem(itemSlotID);
+                }
 				//remove the item from inventory
 				LightingScript.lightHearth(true);
 				Save.hearthAdded = true;
+                Save.currentIceLevel = 0;
 			// Tried to feed the hearth, but not needed
-			}else if (&& Save.currentIceLevel !> 0){
-				Save.setGlobalMessageLong ("It's already warm in here.. there is no need to feed the hearth.");	
+			}else if (invWindow.CheckByID(16) && Save.currentIceLevel <= 0){
+				Save.setGlobalMessage ("It's already warm in here.. there is no need to feed the hearth.");	
 			// Don't have a book in inventory
 			}else{
-				Save.setGlobalMessageLong ("I don't have what is needed to feed the hearth.");	
+				Save.setGlobalMessage ("I don't have what is needed to feed the hearth.");	
 			}
-			// HANDLE LIGHTING THE LANTERN, IF IT IS IN INVENTORY
-			if(&& lanternLightFirstTime == true){
-				LightingScript.lightPlayer (true);
-				lanternLightFirstTime = false;
-			}
+            // HANDLE LIGHTING THE LANTERN, IF IT IS IN INVENTORY
+            LightLantern();
 
 		}
-		*/
+		
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        invWindow.inHearthRange = true;
+        //Debug.Log("hearth range set to true");
+
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        invWindow.inHearthRange = false;
+        //Debug.Log("hearth range set to false");
+    }
+
+    private void GetItemSlotID(int itemID)
+    {
+
+
+        for (int i = 0; i < invWindow.items.Count; i++)
+        {
+            if(itemID == invWindow.items[i].ID)
+            {
+                itemSlotID = i;
+
+            }
+            
+        }
+        
+    }
+
+    private void LightLantern()
+    {
+        if (invWindow.CheckByID(17) && lanternLightFirstTime == true)
+        {
+            GetItemSlotID(17);
+            invWindow.RemoveItem(itemSlotID);
+            invWindow.AddItem(6);
+            LightingScript.lightPlayer(true);
+            lanternLightFirstTime = false;
+        }
+    }
+
+
+
 }

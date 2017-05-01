@@ -25,11 +25,18 @@ public class PickupHandler : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
-        inv.AddItem(itemID);
-
         this.GetComponent<SphereCollider>().enabled = false;
         this.GetComponent<MeshRenderer>().enabled = false;
+
+        int itemSlotID;
+        inv.AddItem(itemID);
+        inv.GetItemSlotID(itemID);
+        itemSlotID = inv.itemSlotID;
+        
+
+        Save.setGlobalMessage("You have picked up a " + inv.items[itemSlotID].Title);
+
+        
 
         
     }

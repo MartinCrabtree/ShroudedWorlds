@@ -1,15 +1,15 @@
 [
     {
         "id": 0,
-        "title": "Silver Key",
+        "title": "a Silver Key",
         "value": 1,
         "stackable": false,
         "imagefile": "I_Key02", 
-        "craftable": false
+        "craftable": true
     },
     {
         "id": 1,
-        "title": "Empty Flask",
+        "title": "an Empty Flask",
         "value": 1,
         "stackable": true,
         "imagefile": "I_Bottle03",
@@ -18,7 +18,7 @@
     },
     {
         "id": 2,
-        "title": "Medical Herb",
+        "title": "a Medical Herb",
         "value": 1,
         "stackable": true,
         "imagefile": "I_Leaf",
@@ -27,7 +27,7 @@
     },
     {
         "id": 3,
-        "title": "Antidote Potion",
+        "title": "an Antidote Potion",
         "value": 1,
         "stackable": true,
         "imagefile": "I_Antidote",
@@ -36,43 +36,43 @@
     },
     {
         "id": 4,
-        "title": "Crowbar",
+        "title": "a Crowbar",
         "value": 1,
         "stackable": false,
-        "imagefile": "W_Axe004",
+        "imagefile": "Crowbar",
         "craftable": false
 
     },
     {
         "id": 5,
-        "title": "Torch Unlit",
+        "title": "an Empty Lantern",
         "value": 1,
         "stackable": false,
-        "imagefile": "I_Torch01",
+        "imagefile": "LanternEmpty",
         "craftable": true
 
     },
     {
         "id": 6,
-        "title": "Torch Lit",
+        "title": "a Lit Lantern",
         "value": 1,
         "stackable": false,
-        "imagefile": "I_Torch02",
+        "imagefile": "LanternLit",
         "craftable": false
 
     },
     {
         "id": 7,
-        "title": "Candle",
+        "title": "a Candle",
         "value": 1,
         "stackable": true,
-        "imagefile": "S_Fire03",
+        "imagefile": "candleFinal",
         "craftable": true
 
     },
     {
         "id": 8,
-        "title": "Magical Light",
+        "title": "a Magical Light",
         "value": 1,
         "stackable": false,
         "imagefile": "S_Light01",
@@ -81,7 +81,7 @@
     },
     {
         "id": 9,
-        "title": "Tenderizer",
+        "title": "a Tenderizer",
         "value": 1,
         "stackable": false,
         "imagefile": "W_Mace003",
@@ -90,7 +90,7 @@
     },
     {
         "id": 10,
-        "title": "Lense",
+        "title": "a Lense",
         "value": 1,
         "stackable": false,
         "imagefile": "I_Telescope",
@@ -102,13 +102,13 @@
         "title": "Tongs",
         "value": 1,
         "stackable": false,
-        "imagefile": "I_ScorpionClaw",
+        "imagefile": "Tongs",
         "craftable": true
 
     },
     {
         "id": 12,
-        "title": "Recipt",
+        "title": "a Recipt",
         "value": 1,
         "stackable": false,
         "imagefile": "I_Fabric",
@@ -117,12 +117,45 @@
     },
     {
         "id": 13,
-        "title": "Blank Scroll",
+        "title": "a Blank Scroll",
         "value": 1,
         "stackable": false,
         "imagefile": "I_Scroll",
         "craftable": true
 
+    },
+    {
+        "id": 14,
+        "title": "a Lava Mushroom",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "mushroomFinal",
+        "craftable": true
+
+    },
+    {
+        "id": 15,
+        "title": "a Key to the Study",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "I_Key03",
+        "craftable": false
+    },
+    {
+        "id": 16,
+        "title": "an Oil Soaked Tome",
+        "value": 1,
+        "stackable": true,
+        "imagefile": "I_Book",
+        "craftable": false
+    },
+    {
+        "id": 17,
+        "title": "a Lantern with a Candle",
+        "value": 1,
+        "stackable": false,
+        "imagefile": "LanternCandle", 
+        "craftable": false
     }
 
 

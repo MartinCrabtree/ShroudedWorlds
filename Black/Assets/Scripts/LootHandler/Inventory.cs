@@ -10,6 +10,13 @@ public class Inventory : MonoBehaviour {
     public GameObject slotPanel;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
+
+    public bool inHearthRange = false;
+    public bool inStatueRange = false;
+
+    public int itemSlotID;
+    
+
     ItemDatabase database;
 
     public int slotAmount = 16;
@@ -43,7 +50,7 @@ public class Inventory : MonoBehaviour {
         }
 
         
-        
+
 
     }
 
@@ -131,13 +138,51 @@ public class Inventory : MonoBehaviour {
         itemObj.transform.SetParent(slots[slotID].transform);
         itemObj.transform.position = slots[slotID].transform.position;
 
-        itemObj.GetComponent<Image>().sprite = null;
+        itemObj.GetComponent<Image>().sprite = Resources.Load<Sprite>("buttonSquare_blue");
+
         itemObj.name = null;
         
 
     }
+
+
+    public void UseStackedItem(int slotID)
+    {
+        Debug.Log("Slot ID is" + slotID);
+
+        ItemData data = slots[slotID].transform.GetChild(0).GetComponent<ItemData>();
+
+        data.amount--; // decrease stack size by one
+        if(data.amount < 1)
+        {
+            RemoveItem(slotID);            
+        }
+        else
+        {
+            data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString(); // update text field with stack size
+
+        }
+        
+        
+    }
+
+
+    public bool CheckByID(int itemID)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].ID == itemID)
+            {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
     
 
+    
     bool CheckIfItemIsInInventory(ItemV2 item)
     {
         for(int i = 0; i < items.Count; i++)
@@ -150,6 +195,23 @@ public class Inventory : MonoBehaviour {
         }
         return false;
     }
+
+
+    public void GetItemSlotID(int itemID)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (itemID == items[i].ID)
+            {
+                itemSlotID = i;
+
+            }
+
+        }
+        
+        
+    }
+
 
 
 }
