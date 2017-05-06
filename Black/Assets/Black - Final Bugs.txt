@@ -1,0 +1,3 @@
+Black - Bugs
+1) ice handler after feeding hearth does not reset the timer of 30 seconds, instead, continues with that timer.
+2) lore playback window does not reset when accidentally playing next piece of lore before first one finishes. Instead, it is still stopping at the point where the first lore should have stopped.

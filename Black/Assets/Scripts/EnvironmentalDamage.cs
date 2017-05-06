@@ -31,6 +31,8 @@ public class EnvironmentalDamage : MonoBehaviour {
 	public bool poisonLevelCountdown = true;
 	public bool temp = true;
 
+	public static bool iceLevelCountdownCheck = false;
+
 	void Awake(){
 		player = GameObject.Find ("/player camera/player");
 
@@ -62,9 +64,14 @@ public class EnvironmentalDamage : MonoBehaviour {
 
 		poisonGasPanel.gameObject.SetActive (false);
 		Debug.Log ("Ice Level Now: " + Save.currentIceLevel);
+
 	}
 	// Update is called once per frame
 	void Update () {
+		if (iceLevelCountdownCheck == true) {
+			iceLevelCountdown = true;
+			iceLevelCountdownCheck = false;
+		}
 		// ICE ENVIRONMENTAL CONTROLS
 		// Increase ice level with time, if nothing added to hearth
 		if(Save.currentIceLevel == 0 && iceLevelCountdown == true && Save.icetesting == true){

@@ -41,18 +41,19 @@ public class HearthClickHandler : MonoBehaviour {
                     
 
 					Save.setTopGlobalMessageLong ("Burning books is so 1930. Even though it feels wrong, it will keep me warm.");
-                    Debug.Log("Grace EATS poop");
                     invWindow.UseStackedItem(itemSlotID);
 					messageFirstTime = false;
 				}else{
 					Save.setTopGlobalMessage ("You feed a book to the hearth and feel warmer.");
-                    Debug.Log("Grace EATS MORE poop");
+                    
                     invWindow.UseStackedItem(itemSlotID);
                 }
 				//remove the item from inventory
 				LightingScript.lightHearth(true);
+				EnvironmentalDamage.iceLevelCountdownCheck = true;
 				Save.hearthAdded = true;
                 Save.currentIceLevel = 0;
+
 			// Tried to feed the hearth, but not needed
 			}else if (invWindow.CheckByID(16) && Save.currentIceLevel <= 0){
 				Save.setGlobalMessage ("It's already warm in here.. there is no need to feed the hearth.");	

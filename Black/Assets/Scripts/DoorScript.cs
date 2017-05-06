@@ -19,19 +19,20 @@ public class DoorScript : MonoBehaviour {
 	public static GameObject studyDoorLocked;
 
 	void Awake (){
-		diningRoomDoorOpened = GameObject.Find ("/Canvas/Doors/diningRoomDoor/Opened");
-		kitchenDoorOpened = GameObject.Find ("/Canvas/Doors/kitchenDoor/Opened");
-		hallwayBDoorOpened = GameObject.Find ("/Canvas/Doors/hallwayBDoor/Opened");
-		guestBedroomDoorOpened = GameObject.Find ("/Canvas/Doors/guestBedroomDoor/Opened");
-		masterBedroomDoorOpened = GameObject.Find ("/Canvas/Doors/masterBedroomDoor/Opened");
-		studyDoorOpened = GameObject.Find ("/Canvas/Doors/studyDoor/Opened");
+		diningRoomDoorOpened = GameObject.Find ("/Doors/diningRoomDoor/Opened");
+		//kitchenDoorOpened = GameObject.Find ("/Canvas/Doors/kitchenDoor/Opened");
+		kitchenDoorOpened = GameObject.Find ("/Doors/kitchenDoor/Opened");
+		hallwayBDoorOpened = GameObject.Find ("/Doors/hallwayBDoor/Opened");
+		guestBedroomDoorOpened = GameObject.Find ("/Doors/guestBedroomDoor/Opened");
+		masterBedroomDoorOpened = GameObject.Find ("/Doors/masterBedroomDoor/Opened");
+		studyDoorOpened = GameObject.Find ("/Doors/studyDoor/Opened");
 
-		diningRoomDoorLocked = GameObject.Find ("/Canvas/Doors/diningRoomDoor/Closed");
-		kitchenDoorLocked = GameObject.Find ("/Canvas/Doors/kitchenDoor/Closed");
-		hallwayBDoorLocked = GameObject.Find ("/Canvas/Doors/hallwayBDoor/Closed");
-		guestBedroomDoorLocked = GameObject.Find ("/Canvas/Doors/guestBedroomDoor/Closed");
-		masterBedroomDoorLocked = GameObject.Find ("/Canvas/Doors/masterBedroomDoor/Closed");
-		studyDoorLocked = GameObject.Find ("/Canvas/Doors/studyDoor/Closed");
+		diningRoomDoorLocked = GameObject.Find ("/Doors/diningRoomDoor/Closed");
+		kitchenDoorLocked = GameObject.Find ("/Doors/kitchenDoor/Closed");
+		hallwayBDoorLocked = GameObject.Find ("/Doors/hallwayBDoor/Closed");
+		guestBedroomDoorLocked = GameObject.Find ("/Doors/guestBedroomDoor/Closed");
+		masterBedroomDoorLocked = GameObject.Find ("/Doors/masterBedroomDoor/Closed");
+		studyDoorLocked = GameObject.Find ("/Doors/studyDoor/Closed");
 	}
 	// Use this for initialization
 	void Start () {
